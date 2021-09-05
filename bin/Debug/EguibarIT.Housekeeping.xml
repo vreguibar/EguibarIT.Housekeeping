@@ -1,0 +1,3799 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EguibarIT.Housekeeping</name>
+    </assembly>
+    <members>
+        <member name="T:EguibarIT.Housekeeping.CMDlets.AdOverlapSubnets">
+            <summary>
+            <para type="synopsis">Find overlap Subnet objects.</para>
+            <para type="description">This CMDlet reads all AD Subnet objects, and will look for any IP Range overlap
+            Active Directory Sites and Services uses this information to optimize traffic
+            (replication, authentication, authorization, etc) by providing the most
+            optimal domain controller on the network. IP Layer 3 of the ASI model should
+            be configured as subnet object, and each of these objects has to be associated
+            to an existing site.</para>
+            <example>
+                <para>This example shows how to use this CMDlet.</para>
+                <para>-        </para>
+                <para>
+                    <code>Get-AdOverlapSubnets</code>
+                </para>
+            </example>
+            <example>
+                <para>This example shows how to use this CMDlet including Site information</para>
+                <para>-        </para>
+                <para>
+                    <code>Get-AdOverlapSubnets -IncludeSite</code>
+                </para>
+            </example>
+            <remarks>Find overlap Subnet objects.</remarks>
+            </summary>
+            <para type="link" uri="(http://EguibarIT.eu)">[Eguibar Information Technology S.L. web site]</para>
+            <list type="alertSet">
+                <item>
+                <term>Copiright and Version</term>
+                    <description>
+                        <para>Version:         1.0</para>
+                        <para>DateModified:    22/Aug/2019</para>
+                        <para>LasModifiedBy:   Vicente Rodriguez Eguibar</para>
+                            <para>.    vicente@eguibar.com</para>
+                            <para>.    Eguibar Information Technology S.L.</para>
+                            <para>.    http://www.eguibarit.com</para>
+                    </description>
+                </item>
+            </list>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.AdOverlapSubnets.IncludeSite">
+            <summary>
+                <para type="inputType">[SWITCH] (bool)</para>
+                <para type="description">Switch indicator. If present (TRUE), the Site information will be displayed.</para>
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AdOverlapSubnets.BeginProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AdOverlapSubnets.ProcessRecord">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AdOverlapSubnets.EndProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AdOverlapSubnets.StopProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.CMDlets.AdAdminCount">
+            <summary>
+            <para type="synopsis">Clears adminCount attribute, and enables inherited security on the passed object (User or Group).</para>
+            <para type="description">Clears adminCount attribute, and enables inherited security on the passed object (User or Group).</para>
+            <example>
+                <para>This example shows how to use this CMDlet</para>
+                <para>-        </para>
+                <para>
+                    <code>Set-AdAdminCount dvader</code>
+                </para>
+            </example>
+            <example>
+                <para>This example shows how to use this CMDlet using named parameters</para>
+                <para>-        </para>
+                <para>
+                    <code>Set-AdAdminCount -SamAccountName dvader</code>
+                </para>
+            </example>
+            <remarks>Clears adminCount attribute, and enables inherited security on the passed object (User or Group).</remarks>
+            </summary>
+            <para type="link" uri="(http://EguibarIT.eu)">[Eguibar Information Technology S.L. web site]</para>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.AdAdminCount.SamAccountName">
+            <summary>
+                <para type="inputType">[STRING] Sam Account Name of the object to be reseted.</para>
+                <para type="description">SamAccountName of the object to be reseted.</para>
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AdAdminCount.BeginProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AdAdminCount.ProcessRecord">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AdAdminCount.EndProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AdAdminCount.StopProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.CMDlets.AllUserAdminCount">
+            <summary>
+            <para type="synopsis">Clears adminCount attribute, and enables inherited security on all the passed user objects.</para>
+            <para type="description">Finds all user objects (From specific OU and childs, or All Domain), 
+            and clears adminCount attribute, and enables inherited security 
+            on the passed user objectlist.</para>
+                <example>
+                    <para>This example shows how to use this CMDlet using named parameters finding all users with adminCount = 1 in the domain</para>
+                    <para>-        -</para>
+                    <para>
+                        <code>Set-AllUserAdminCount -all</code>
+                    </para>
+                </example>
+                <example>
+                    <para>This example shows how to use this CMDlet using named parameters finding all users with adminCount = 1 in specific OU</para>
+                    <para>-        -</para>
+                    <para>
+                        <code>Set-AllUserAdminCount -SubTree -SearchRootDN "OU=Admin Accounts,OU=Admin,DC=EguibarIT,DC=local"</code>
+                    </para>
+            </example>
+            <remarks>Clears adminCount attribute, and enables inherited security on all the passed user objects.</remarks>
+            </summary>
+            <para type="link" uri="(http://EguibarIT.eu)">[Eguibar Information Technology S.L. web site]</para>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.AllUserAdminCount.All">
+            <summary>
+            <para type="inputType">[SWITCH] (bool) Indicating if all users in the domain should be processed.</para>
+            <para type="description">If present, all users in the domain should be processed</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.AllUserAdminCount.SubTree">
+            <summary>
+            <para type="inputType">[SWITCH] Indicating only a sub-tree OU should be processed.</para>
+            <para type="description">If present, only users of a sub-tree OU should be processed.</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.AllUserAdminCount.SearchRootDN">
+            <summary>
+            <para type="inputType">[STRING] Representing the Distinguished Name where the search starts (ej. OU=Sites,DC=EguibarIT,DC=local).</para>
+            <para type="description">Distinguished Name where the search starts.</para>
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AllUserAdminCount.BeginProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AllUserAdminCount.ProcessRecord">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AllUserAdminCount.EndProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AllUserAdminCount.StopProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.CMDlets.AllGroupAdminCount">
+            <summary>
+            <para type="synopsis">Clears adminCount attribute, and enables inherited security on all the passed group objects.</para>
+            <para type="description">Finds all group objects (From specific OU and childs, or All Domain), 
+            and clears adminCount attribute, enabling inherited security on the 
+            passed group objectlist.</para>
+                <example>
+                    <para>This example shows how to use this CMDlet using named parameters finding all groups with adminCount = 1 in the domain</para>
+                    <para>
+                        <code>Set-AllGroupAdminCount -all</code>
+                    </para>
+                </example>
+                <example>
+                    <para>This example shows how to use this CMDlet using named parameters finding all groups with adminCount = 1 in specific OU</para>
+                    <para>
+                        <code>Set-AllGroupAdminCount -SubTree -SearchRootDN "OU=Admin Accounts,OU=Admin,DC=EguibarIT,DC=local"</code>
+                    </para>
+            </example>
+            <remarks>Clears adminCount attribute, and enables inherited security on all the passed group objects.</remarks>
+            </summary>
+            <para type="link" uri="(http://EguibarIT.eu)">[Eguibar Information Technology S.L. web site]</para>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.AllGroupAdminCount.All">
+            <summary>
+            <para type="inputType">[SWITCH] Indicating if all groups in the domain should be processed.</para>
+            <para type="description">If present, all groups in the domain should be processed</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.AllGroupAdminCount.SubTree">
+            <summary>
+            <para type="inputType">[SWITCH] Indicating only a sub-tree OU should be processed.</para>
+            <para type="description">If present, only groups of a sub-tree OU should be processed.</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.AllGroupAdminCount.SearchRootDN">
+            <summary>
+            <para type="inputType">[STRING] Representing the Distinguished Name where the search starts (ej. OU=Sites,DC=EguibarIT,DC=local).</para>
+            <para type="description">Distinguished Name where the search starts.</para>
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AllGroupAdminCount.BeginProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AllGroupAdminCount.ProcessRecord">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AllGroupAdminCount.EndProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AllGroupAdminCount.StopProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.CMDlets.AdOrphanGPO">
+            <summary>
+            <para type="synopsis">Find orphaned GPO</para>
+            <para type="description">An orphaned GPO is an AD GPO object which is missing its corresponding GPT in SYSVOL.
+            This CMDlet can find all orphaned GPOs, and can delete them.</para>
+                <example>
+                    <para>This example shows how to use this CMDlet</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Get-AdOrphanGPO</code>
+                    </para>
+                </example>
+                <example>
+                    <para>This example shows how to use this CMDlet with parameters</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Get-AdOrphanGPO -RemoveOrphanGPO</code>
+                    </para>
+                </example>
+            <remarks>Find orphaned GPO</remarks>
+            </summary>
+            <para type="link" uri="(http://EguibarIT.eu)">[Eguibar Information Technology S.L. web site]</para>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.AdOrphanGPO.RemoveOrphanGPO">
+            <summary>
+            <para type="inputType">[SWITCH] parameter (true or false). If present the value becomes TRUE, and the Orphan GPO will be removed</para>
+            <para type="description">Switch indicator to remove the Orphan GPO</para>
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AdOrphanGPO.BeginProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AdOrphanGPO.ProcessRecord">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AdOrphanGPO.EndProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AdOrphanGPO.StopProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.CMDlets.AdOrphanGPT">
+            <summary>
+            <para type="synopsis">Find orphaned GPT</para>
+            <para type="description">An orphaned GPT is a SYSVOL subfolder structure which is missing its corresponding GPO in AD.
+            This CMDlet can find all orphaned GPTs, and can delete them.</para>
+                <example>
+                    <para>This example shows how to use this CMDlet</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Get-AdOrphanGPT</code>
+                    </para>
+                </example>
+                <example>
+                    <para>This example shows how to use this CMDlet with parameters</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Get-AdOrphanGPT -RemoveOrphanGPT</code>
+                    </para>
+                </example>
+            <remarks>Find orphaned GPO</remarks>
+            </summary>
+            <para type="link" uri="(http://EguibarIT.eu)">[Eguibar Information Technology S.L. web site]</para>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.AdOrphanGPT.RemoveOrphanGPT">
+            <summary>
+            <para type="inputType">[SWITCH] parameter (true or false). If present the value becomes TRUE, and the Orphan GPT will be removed</para>
+            <para type="description">Switch indicator to remove the Orphan GPT</para>
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AdOrphanGPT.BeginProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AdOrphanGPT.ProcessRecord">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AdOrphanGPT.EndProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AdOrphanGPT.StopProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.CMDlets.SemiPrivilegedUser">
+            <summary>
+                <para type="synopsis">Create or modify a Semi-Privileged account.</para>
+                <para type="description">Create or modify a Semi-Privileged account.</para>
+                <example>
+                    <para>This example shows how to use this CMDlet</para>
+                    <para>-        </para>
+                    <para>
+                        <code>New-SemiPrivilegedUser dvader dvader@eguibarit.com T0 'OU=Admin Accounts,OU=Admin,DC=EguibarIT,DC=local' 'DelegationModel@eguibarit.com' 'smtpout.europe.secureserver.net'</code>
+                    </para>
+                </example>
+                <example>
+                    <para>This example shows how to use this CMDlet using named parameters</para>
+                    <para>-        </para>
+                    <para>
+                        <code>New-SemiPrivilegedUser -SamAccountName dvader -EmailTo dvader@eguibarit.com -AccountType T0 -AdminUsersDN 'OU=Admin Accounts,OU=Admin,DC=EguibarIT,DC=local' -From 'DelegationModel@eguibarit.com' -SMTPserver 'smtpout.europe.secureserver.net'</code>
+                    </para>
+                </example>
+                <remarks>Create or modify a Semi-Privileged account.</remarks>
+            </summary>
+            <para type="link" uri="(http://EguibarIT.eu)">[Eguibar Information Technology S.L. web site]</para>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.SemiPrivilegedUser.SamAccountName">
+            <summary>
+            <para type="inputType">[STRING] representing the user SamAccountName.</para>
+            <para type="description">Identity of the user getting the new Admin Account (Semi-Privileged user).</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.SemiPrivilegedUser.EmailTo">
+            <summary>
+            <para type="inputType">[STRING] representing the valid E-mail address.</para>
+            <para type="description">Valid Email of the target user. This address will be used to send information to her/him.</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.SemiPrivilegedUser.AccountType">
+            <summary>
+            <para type="inputType">[STRING] Indicating which kind of Semi-Privileged account to be created. Valid values are T0 or T1 or T2</para>
+            <para type="description">Must specify the account type. Valid values are T0 or T1 or T2</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.SemiPrivilegedUser.AdminUsersDN">
+            <summary>
+            <para type="inputType">[STRING] Admin User Account OU Distinguished Name. (ej. OU=Users,OU=Good,OU=Sites,DC=EguibarIT,DC=local).</para>
+            <para type="description">Distinguished Name of the container where the Admin users are located.</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.SemiPrivilegedUser.From">
+            <summary>
+            <para type="inputType">[STRING] representing the valid E-mail address of sender.</para>
+            <para type="description">Valid Email of the sending user. This address will be used to send the information and for authenticate to the SMTP server.</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.SemiPrivilegedUser.CredentialUser">
+            <summary>
+            <para type="inputType">[STRING] representing the valid user for authenticating to SMTP.</para>
+            <para type="description">User for authenticate to the SMTP server.</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.SemiPrivilegedUser.CredentialPassword">
+            <summary>
+            <para type="inputType">[STRING] representing the valid password for authenticating to SMTP (User is E-mail address of sender).</para>
+            <para type="description">Password for authenticate to the SMTP server.</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.SemiPrivilegedUser.SMTPserver">
+            <summary>
+            <para type="inputType">[STRING] representing the SMTP server.</para>
+            <para type="description">SMTP server.</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.SemiPrivilegedUser.SMTPport">
+            <summary>
+            <para type="inputType">[int] representing the SMTP port number.</para>
+            <para type="description">SMTP port number.</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.SemiPrivilegedUser.BodyTemplate">
+            <summary>
+            <para type="inputType">[STRING] representing the body template file.</para>
+            <para type="description">Path to the body template file.</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.SemiPrivilegedUser.BodyImage">
+            <summary>
+            <para type="inputType">[STRING] representing the attached image for the body template.</para>
+            <para type="description">Path to the attached image of body template.</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.SemiPrivilegedUser.PwdBodyTemplate">
+            <summary>
+            <para type="inputType">[STRING] representing the Password body template file.</para>
+            <para type="description">Path to the Password body template file.</para>
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.SemiPrivilegedUser.BeginProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.SemiPrivilegedUser.ProcessRecord">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.SemiPrivilegedUser.EndProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.SemiPrivilegedUser.StopProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.CMDlets.NonPrivilegedGroup">
+            <summary>
+            <para type="synopsis">Function for consistency check on semi-privileged accounts</para>
+            <para type="description">For each of the user accounts stored within the USERS container of Admin Area, all groups will be enumerated 
+            and evaluated.In case that any of the groups the user belongs to are not part of Admin Area and/or BuiltIn container, 
+            will be removed from the user.</para>
+                <example>
+                    <para>This example shows how to use this CMDlet</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Set-NonPrivilegedGroupHousekeeping "OU=Users,OU=Admin,DC=EguibarIT,DC=local"</code>
+                    </para>
+                </example>
+                <example>
+                    <para>This example shows how to use this CMDlet using named parameters</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Set-NonPrivilegedGroupHousekeeping -AdminUsersDN "OU=Users,OU=Admin,DC=EguibarIT,DC=local"</code>
+                    </para>
+            </example>
+            <remarks>Ensures only Privileged and Semi-Privileged users are used within Admin groups.</remarks>
+            </summary>
+            <para type="link" uri="(http://EguibarIT.eu)">[Eguibar Information Technology S.L. web site]</para>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.NonPrivilegedGroup.AdminUsersDN">
+            <summary>
+            <para type="inputType">[STRING] Admin User Account OU Distinguished Name. (ej. OU=Users,OU=Admin,DC=EguibarIT,DC=local).</para>
+            <para type="description">Distinguished Name of the container where the users are located.</para>
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.NonPrivilegedGroup.BeginProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.NonPrivilegedGroup.ProcessRecord">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.NonPrivilegedGroup.EndProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.NonPrivilegedGroup.StopProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.CMDlets.PrivilegedComputer">
+            <summary>
+            <para type="synopsis">Function for Privileged Computers housekeeping</para>
+            <para type="description">PAWs and Infrastructure Services must be managed by Tier0 administrators and services.
+            Each typemust belong to a certain group(SL_PAWS or SL_InfrastructureServices) 
+            in order to be mantained.</para>
+                <example>
+                    <para>This example shows how to use this CMDlet</para>
+                <para>-        </para>
+                    <para>
+                        <code>Set-PrivilegedComputerHousekeeping "OU=Admin,DC=EguibarIT,DC=local"</code>
+                    </para>
+                </example>
+                <example>
+                    <para>This example shows how to use this CMDlet using named parameters</para>
+                <para>-        </para>
+                    <para>
+                        <code>Set-PrivilegedComputerHousekeeping -SearchRootDN "OU=Admin,DC=EguibarIT,DC=local"</code>
+                    </para>
+                </example>
+            <remarks>Ensures that PAWs and Infrastructure Services are managed as Tier0 assets by adding those to its corresponding group.</remarks>
+            </summary>
+            <para type="link" uri="(http://EguibarIT.eu)">[Eguibar Information Technology S.L. web site]</para>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.PrivilegedComputer.SearchRootDN">
+            <summary>
+            <para type="inputType">[STRING] Admin  OU Distinguished Name. (ej. OU=Users,OU=Good,OU=Sites,DC=EguibarIT,DC=local).</para>
+            <para type="description">Distinguished Name of the container where the computers are located.</para>
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.PrivilegedComputer.BeginProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.PrivilegedComputer.ProcessRecord">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.PrivilegedComputer.EndProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.PrivilegedComputer.StopProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.CMDlets.PrivilegedGroups">
+            <summary>
+            <para type="synopsis">Function for Privileged Groups housekeeping</para>
+            <para type="description">Ensure that any group stored on Admin OU (Tier0) contains only authorized users. 
+            An Authorized user is a user created and mantained by the Tier0 Admins, and is 
+            usually identified by the SamAccountName suffix of either _T0, or _T1 or _T2. 
+            Any non authorized user will be inmediatelly revoked from these groups.</para>
+                <example>
+                    <para>This example shows how to use this CMDlet.</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Set-PrivilegedGroupsHousekeeping "OU=Groups,OU=Admin,DC=EguibarIT,DC=local"</code>
+                    </para>
+               </example>
+               <example>
+                    <para>This example shows how to use this CMDlet using named parameters.</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Set-PrivilegedGroupsHousekeeping -AdminUsersDN "OU=Groups,OU=Admin,DC=EguibarIT,DC=local"</code>
+                    </para>
+               </example>
+               <example>
+                    <para>This example shows how to use this CMDlet using named parameters and provides a exclusion list.</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Set-PrivilegedGroupsHousekeeping -AdminUsersDN "OU=Groups,OU=Admin,DC=EguibarIT,DC=local" -ExcludeList "dvader", "hsolo"</code>
+                    </para>
+               </example>
+            <remarks>Ensures only Privileged and Semi-Privileged users are members of Admin groups.</remarks>
+            </summary>
+            <para type="link" uri="(http://EguibarIT.eu)">[Eguibar Information Technology S.L. web site]</para>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.PrivilegedGroups.AdminUsersDN">
+            <summary>
+            <para type="inputType">[STRING] Admin Users OU Distinguished Name. (ej. OU=Users,OU=Good,OU=Sites,DC=EguibarIT,DC=local).</para>
+            <para type="description">Distinguished Name of the container where the users are located.</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.PrivilegedGroups.ExcludeList">
+            <summary>
+            <para type="inputType">List[STRING] user list array</para>
+            <para type="description">Userlist to be excluded from this process.</para>
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.PrivilegedGroups.BeginProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.PrivilegedGroups.ProcessRecord">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.PrivilegedGroups.EndProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.PrivilegedGroups.StopProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.CMDlets.PrivilegedUsersHousekeeping">
+            <summary>
+            <para type="synopsis">Function for Privileged Users housekeeping</para>
+            <para type="description">For each of the user accounts stored within the USERS container, make it part of the corresponding admin tier group. 
+            For example, if the user account is a Tier2 account(_T2), the user must belong to SG_Tier2Admins group.</para>
+                <example>
+                    <para>This example shows how to use this CMDlet</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Set-PrivilegedUsersHousekeeping "OU=Users,OU=Admin,DC=EguibarIT,DC=local"</code>
+                    </para>
+                </example>
+                <example>
+                    <para>This example shows how to use this CMDlet using named parameters</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Set-PrivilegedUsersHousekeeping -AdminUsersDN "OU=Users,OU=Admin,DC=EguibarIT,DC=local"</code>
+                    </para>
+                </example>
+                <example>
+                    <para>This example shows how to use this CMDlet using named parameters and removing Non-Standard users.</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Set-PrivilegedUsersHousekeeping -AdminUsersDN "OU=Users,OU=Admin,DC=EguibarIT,DC=local" -DisableNonStandardUsers</code>
+                    </para>
+            </example>
+            <remarks>Ensure each Semi-Privileged account is member of the corresponding tier group.</remarks>
+            </summary>
+            <para type="link" uri="(http://EguibarIT.eu)">[Eguibar Information Technology S.L. web site]</para>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.PrivilegedUsersHousekeeping.AdminUsersDN">
+            <summary>
+            <para type="inputType">[STRING] Admin User Account OU Distinguished Name. (ej. OU=Users,OU=Good,OU=Sites,DC=EguibarIT,DC=local).</para>
+            <para type="description">Distinguished Name of the container where the Admin users are located.</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.PrivilegedUsersHousekeeping.DisableNonStandardUsers">
+            <summary>
+            <para type="inputType">SWITCH parameter (true or false). If present the value becomes TRUE, and </para>
+            <para type="description">Switch indicator to disable all Non-Standard users</para>
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.PrivilegedUsersHousekeeping.BeginProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.PrivilegedUsersHousekeeping.ProcessRecord">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.PrivilegedUsersHousekeeping.EndProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.PrivilegedUsersHousekeeping.StopProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.CMDlets.RandomPassword">
+            <summary>
+                <para type="synopsis">Generate random password</para>
+                <para type="description">Generate random password, with defined length and complexity.</para>
+                    <example>
+                        <para>This example shows how to use this CMDlet using named parameters</para>
+                        <para>-        </para>
+                        <para>
+                            <code>Get-RandomPassword -PasswordLength 14 -PasswordComplexity VeryHigh</code>
+                        </para>
+                    </example>
+                    <example>
+                        <para>This example shows how to use this CMDlet</para>
+                        <para>-        </para>
+                        <para>
+                            <code>Get-RandomPassword 14 VeryHigh</code>
+                        </para>
+                    </example>
+                    <example>
+                        <para>Create a new 10 Character Password of Uppercase/Lowercase/Numbers and store as a Secure.String in Variable called $MYPASSWORD</para>
+                        <para>-        </para>
+                        <para>
+                            <code>$MYPASSWORD = CONVERTTO-SECURESTRING (Get-RandomPassword -Length 10 -Complexity High) -asplaintext -force</code>
+                        </para>
+                    </example>
+                <remarks>Generate random password with configurable parameters.</remarks>
+            </summary>
+            <para type="link" uri="(http://EguibarIT.eu)">[Eguibar Information Technology S.L. web site]</para>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.RandomPassword.PasswordLength">
+            <summary>
+            <para type="inputType">[INT] Length of the password to be generated.</para>
+            <para type="description">Length of the password to be generated.</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.RandomPassword.PasswordComplexity">
+            <summary>
+            <para type="inputType">[ValidateSet] Low, Medium, High or VeryHigh</para>
+            <para type="description">Password complexity. Low use lowercase characters. Medium uses aditional upercase characters. High uses additional number characters. VeryHigh uses additional special characters.</para>
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.RandomPassword.BeginProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.RandomPassword.ProcessRecord">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.RandomPassword.EndProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.RandomPassword.StopProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.CMDlets.ScheduleAllUserAdminCount">
+            <summary>
+            <para type="synopsis">Create a new Scheduled Tasks which executes Set-AllUserAdminCount</para>
+            <para type="description">Create a new Scheduled Tasks, which will trigger 12 times per day. 
+            The Action configured is a PowerShell function from the Housekeeping module: Set-AllUserAdminCount.</para>
+                <example>
+                    <para>This example shows how to use this CMDlet using named parameters</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Set-ScheduleAllUserAdminCount -ServiceAccount "SA_R2D2"</code>
+                    </para>
+                </example>
+                <example>
+                    <para>This example shows how to use this CMDlet</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Set-ScheduleAllUserAdminCount "SA_R2D2"</code>
+                    </para>
+                </example>
+            <remarks>Create new Scheduled Task which resets All Users Admin Count.</remarks>
+            </summary>
+            <para type="link" uri="(http://EguibarIT.eu)">[Eguibar Information Technology S.L. web site]</para>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.ScheduleAllUserAdminCount.ServiceAccount">
+            <summary>
+                <para type="inputType">[String] SamAccountName of the group managed service account used to execute the scheduled task.</para>
+                <para type="description">SamAccountName of the service account (or gMSA) used to execute the scheduled task.</para>
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.ScheduleAllUserAdminCount.BeginProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.ScheduleAllUserAdminCount.ProcessRecord">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.ScheduleAllUserAdminCount.EndProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.ScheduleAllUserAdminCount.StopProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.CMDlets.ScheduleAllGroupAdminCount">
+            <summary>
+            <para type="synopsis">Create a new Scheduled Tasks which executes Set-AllGroupAdminCount</para>
+            <para type="description">Create a new Scheduled Tasks, which will trigger 12 times per day. 
+            The Action configured is a PowerShell function from the Housekeeping module: Set-AllGroupAdminCount.</para>
+                <example>
+                    <para>This example shows how to use this CMDlet using named parameters</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Set-ScheduleAllGroupAdminCount -ServiceAccount "SA_R2D2"</code>
+                    </para>
+                </example>
+                <example>
+                    <para>This example shows how to use this CMDlet</para>
+                    <para>-        </para>
+                    <para>
+                    <code>Set-ScheduleAllGroupAdminCount "SA_R2D2"</code>
+                    </para>
+                </example>
+            <remarks>Create new Scheduled Task which resets All Groups Admin Count.</remarks>
+            </summary>
+            <para type="link" uri="(http://EguibarIT.eu)">[Eguibar Information Technology S.L. web site]</para>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.ScheduleAllGroupAdminCount.ServiceAccount">
+            <summary>
+                <para type="inputType">[String] SamAccountName of the group managed service account used to execute the scheduled task.</para>
+                <para type="description">SamAccountName of the service account (or gMSA) used to execute the scheduled task.</para>
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.ScheduleAllGroupAdminCount.BeginProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.ScheduleAllGroupAdminCount.ProcessRecord">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.ScheduleAllGroupAdminCount.EndProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.ScheduleAllGroupAdminCount.StopProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.CMDlets.SchedulePrivilegedUsers">
+            <summary>
+            <para type="synopsis">Create a new Scheduled Tasks which executes Set-PrivilegedUsersHousekeeping</para>
+            <para type="description">Create a new Scheduled Tasks, which will trigger 12 times per day. 
+            The Action configured is a PowerShell function from the Housekeeping module: Set-PrivilegedUsersHousekeeping</para>
+                <example>
+                    <para>This example shows how to use this CMDlet using named parameters</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Set-SchedulePrivilegedUsers -ServiceAccount "SA_R2D2" -AdminUsersDN "OU=Users,OU=Admin,DC=EguibarIT,DC=local"</code>
+                    </para>
+                </example>
+                <example>
+                    <para>This example shows how to use this CMDlet</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Set-SchedulePrivilegedUsers "SA_R2D2" "OU=Users,OU=Admin,DC=EguibarIT,DC=local"</code>
+                    </para>
+                </example>
+            <remarks>Create new Scheduled Task which ensure each Semi-Privileged account is member of the corresponding tier group.</remarks>
+            </summary>
+            <para type="link" uri="(http://EguibarIT.eu)">[Eguibar Information Technology S.L. web site]</para>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.SchedulePrivilegedUsers.ServiceAccount">
+            <summary>
+                <para type="inputType">[String] SamAccountName of the group managed service account used to execute the scheduled task.</para>
+                <para type="description">SamAccountName of the service account (or gMSA) used to execute the scheduled task.</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.SchedulePrivilegedUsers.AdminUsersDN">
+            <summary>
+                <para type="inputType">[STRING] Admin User Account OU Distinguished Name. (ej. OU=Users,OU=Good,OU=Sites,DC=EguibarIT,DC=local).</para>
+                <para type="description">Distinguished Name of the container where the Admin users are located.</para>
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.SchedulePrivilegedUsers.BeginProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.SchedulePrivilegedUsers.ProcessRecord">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.SchedulePrivilegedUsers.EndProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.SchedulePrivilegedUsers.StopProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.CMDlets.ScheduleNonPrivilegedGroups">
+            <summary>
+            <para type="synopsis">Create a new Scheduled Tasks which executes Set-NonPrivilegedGroupHousekeeping</para>
+            <para type="description">Create a new Scheduled Tasks, which will trigger 12 times per day. The Action configured 
+            is a PowerShell function from the Housekeeping module: Set-NonPrivilegedGroupHousekeeping</para>
+                <example>
+                    <para>This example shows how to use this CMDlet using named parameters</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Set-ScheduleNonPrivilegedGroups -ServiceAccount "SA_R2D2" -AdminUsersDN "OU=Users,OU=Admin,DC=EguibarIT,DC=local"</code>
+                    </para>
+                </example>
+                <example>
+                    <para>This example shows how to use this CMDlet</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Set-ScheduleNonPrivilegedGroups "SA_R2D2" "OU=Users,OU=Admin,DC=EguibarIT,DC=local"</code>
+                    </para>
+                </example>
+            <remarks>Create new Scheduled Task which ensures only Privileged and Semi-Privileged users are used within Admin groups.</remarks>
+            </summary>
+            <para type="link" uri="(http://EguibarIT.eu)">[Eguibar Information Technology S.L. web site]</para>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.ScheduleNonPrivilegedGroups.ServiceAccount">
+            <summary>
+                <para type="inputType">[String] SamAccountName of the group managed service account used to execute the scheduled task.</para>
+                <para type="description">SamAccountName of the service account (or gMSA) used to execute the scheduled task.</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.ScheduleNonPrivilegedGroups.AdminUsersDN">
+            <summary>
+                <para type="inputType">[STRING] Admin User Account OU Distinguished Name. (ej. OU=Users,OU=Good,OU=Sites,DC=EguibarIT,DC=local).</para>
+                <para type="description">Distinguished Name of the container where the Admin users are located.</para>
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.ScheduleNonPrivilegedGroups.BeginProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.ScheduleNonPrivilegedGroups.ProcessRecord">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.ScheduleNonPrivilegedGroups.EndProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.ScheduleNonPrivilegedGroups.StopProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.CMDlets.SchedulePrivilegedComputers">
+            <summary>
+            <para type="synopsis">Create a new Scheduled Tasks which executes Set-PrivilegedComputerHousekeeping</para>
+            <para type="description">Create a new Scheduled Tasks, which will trigger 12 times per day. The Action configured 
+            is a PowerShell function from the Housekeeping module: Set-PrivilegedComputerHousekeeping</para>
+                <example>
+                    <para>This example shows how to use this CMDlet using named parameters</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Set-SchedulePrivilegedComputers -ServiceAccount "SA_R2D2" -SearchRootDN "OU=Admin,DC=EguibarIT,DC=local"</code>
+                    </para>
+                </example>
+                <example>
+                    <para>This example shows how to use this CMDlet</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Set-SchedulePrivilegedComputers "SA_R2D2" "OU=Admin,DC=EguibarIT,DC=local"</code>
+                    </para>
+                </example>
+            <remarks>Create new Scheduled Task which ensures that PAWs and Infrastructure Services are managed as Tier0 assets by adding those to its corresponding group.</remarks>
+            </summary>
+            <para type="link" uri="(http://EguibarIT.eu)">[Eguibar Information Technology S.L. web site]</para>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.SchedulePrivilegedComputers.ServiceAccount">
+            <summary>
+                <para type="inputType">[String] SamAccountName of the group managed service account used to execute the scheduled task.</para>
+                <para type="description">SamAccountName of the service account (or gMSA) used to execute the scheduled task.</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.SchedulePrivilegedComputers.SearchRootDN">
+            <summary>
+                <para type="inputType">[STRING] Admin  OU Distinguished Name. (ej. OU=Users,OU=Good,OU=Sites,DC=EguibarIT,DC=local).</para>
+                <para type="description">Distinguished Name of the container where the computers are located.</para>
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.SchedulePrivilegedComputers.BeginProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.SchedulePrivilegedComputers.ProcessRecord">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.SchedulePrivilegedComputers.EndProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.SchedulePrivilegedComputers.StopProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.CMDlets.SchedulePrivilegedGroups">
+            <summary>
+            <para type="synopsis">Create a new Scheduled Tasks which executes Set-PrivilegedGroupsHousekeeping</para>
+            <para type="description">Create a new Scheduled Tasks, which will trigger 12 times per day. The Action configured 
+            is a PowerShell function from the Housekeeping module: Set-PrivilegedGroupsHousekeeping</para>
+                <example>
+                    <para>This example shows how to use this CMDlet using named parameters.</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Set-SchedulePrivilegedGroups -ServiceAccount "SA_R2D2" -AdminUsersDN "OU=Users,OU=Admin,DC=EguibarIT,DC=local" -ExcludeList "Administrator", "TheGood"</code>
+                    </para>
+                </example>
+                <example>
+                    <para>This example shows how to use this CMDlet.</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Set-SchedulePrivilegedGroups "SA_R2D2" "OU=Users,OU=Admin,DC=EguibarIT,DC=local"</code>
+                    </para>
+                </example>
+            <remarks>Create new Scheduled Task which ensures only Privileged and Semi-Privileged users are members of Admin groups.</remarks>
+            </summary>
+            <para type="link" uri="(http://EguibarIT.eu)">[Eguibar Information Technology S.L. web site]</para>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.SchedulePrivilegedGroups.ServiceAccount">
+            <summary>
+                <para type="inputType">[String] SamAccountName of the group managed service account used to execute the scheduled task.</para>
+                <para type="description">SamAccountName of the service account (or gMSA) used to execute the scheduled task.</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.SchedulePrivilegedGroups.AdminUsersDN">
+            <summary>
+                <para type="inputType">[STRING] Admin Users OU Distinguished Name. (ej. OU=Users,OU=Good,OU=Sites,DC=EguibarIT,DC=local).</para>
+                <para type="description">Distinguished Name of the container where the users are located.</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.SchedulePrivilegedGroups.ExcludeList">
+            <summary>
+                <para type="inputType">List[STRING] user list array</para>
+                <para type="description">Userlist to be excluded from this process.</para>
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.SchedulePrivilegedGroups.BeginProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.SchedulePrivilegedGroups.ProcessRecord">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.SchedulePrivilegedGroups.EndProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.SchedulePrivilegedGroups.StopProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.CMDlets.ScheduleSemiPrivilegedKeyPair">
+            <summary>
+            <para type="synopsis">Create a new Scheduled Tasks which executes Set-SemiPrivilegedKeyPairCheck</para>
+            <para type="description">Create a new Scheduled Tasks, which will trigger 12 times per day. The Action configured 
+            is a PowerShell function from the Housekeeping module: Set-SemiPrivilegedKeyPairCheck</para>
+                <example>
+                    <para>This example shows how to use this CMDlet using named parameters. </para>
+                    <para>-        </para>
+                    <para>
+                        <code>Set-ScheduleSemiPrivilegedKeyPair -ServiceAccount "SA_R2D2" -AdminUsersDN "OU=Users,OU=Admin,DC=EguibarIT,DC=local" -ExcludeList "Administrator", "TheGood"</code>
+                    </para>
+               </example>
+               <example>
+                    <para>This example shows how to use this CMDlet. </para>
+                    <para>-        </para>
+                    <para>
+                        <code>Set-ScheduleSemiPrivilegedKeyPair "SA_R2D2" "OU=Users,OU=Admin,DC=EguibarIT,DC=local"</code>
+                    </para>
+                </example>
+            <remarks>Create new Scheduled Task which ensures only each Semi-Privileged users does have a valid Non-Privileged user.</remarks>
+            </summary>
+            <para type="link" uri="(http://EguibarIT.eu)">[Eguibar Information Technology S.L. web site]</para>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.ScheduleSemiPrivilegedKeyPair.ServiceAccount">
+            <summary>
+                <para type="inputType">[String] SamAccountName of the group managed service account used to execute the scheduled task.</para>
+                <para type="description">SamAccountName of the service account (or gMSA) used to execute the scheduled task.</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.ScheduleSemiPrivilegedKeyPair.AdminUsersDN">
+            <summary>
+                <para type="inputType">[STRING] Admin User Account OU Distinguished Name. (ej. OU=Users,OU=Admin,DC=EguibarIT,DC=local).</para>
+                <para type="description">Distinguished Name of the container where the users are located.</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.ScheduleSemiPrivilegedKeyPair.ExcludeList">
+            <summary>
+                <para type="inputType">List[STRING] user list array</para>
+                <para type="description">Userlist to be excluded from this process.</para>
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.ScheduleSemiPrivilegedKeyPair.BeginProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.ScheduleSemiPrivilegedKeyPair.ProcessRecord">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.ScheduleSemiPrivilegedKeyPair.EndProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.ScheduleSemiPrivilegedKeyPair.StopProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.CMDlets.ScheduleServiceAccounts">
+            <summary>
+            <para type="synopsis">Create a new Scheduled Tasks which executes Set-ServiceAccountHousekeeping</para>
+            <para type="description">Create a new Scheduled Tasks, which will trigger 12 times per day. The Action configured 
+            is a PowerShell function from the Housekeeping module: Set-ServiceAccountHousekeeping</para>
+                <example>
+                    <para>This example shows how to use this CMDlet using named parameters</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Set-ScheduleServiceAccounts -ServiceAccount "SA_R2D2" -ServiceAccountDN "OU=Service Accounts,OU=Admin,DC=EguibarIT,DC=local" -SAGroupName "SG_T0SA"</code>
+                    </para>
+                </example>
+                <example>
+                    <para>This example shows how to use this CMDlet</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Set-ScheduleServiceAccounts "SA_R2D2" "OU=Service Accounts,OU=Admin,DC=EguibarIT,DC=local" "SG_T0SA"</code>
+                    </para>
+                </example>
+            <remarks>Create new Scheduled Task which ensure each Service Account is member of the corresponding tier group.</remarks>
+            </summary>
+            <para type="link" uri="(http://EguibarIT.eu)">[Eguibar Information Technology S.L. web site]</para>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.ScheduleServiceAccounts.ServiceAccount">
+            <summary>
+                <para type="inputType">[STRING] SamAccountName of the group managed service account used to execute the scheduled task.</para>
+                <para type="description">SamAccountName of the service account (or gMSA) used to execute the scheduled task.</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.ScheduleServiceAccounts.ServiceAccountDN">
+            <summary>
+                <para type="inputType">[STRING] representing the Distinguished Name of the object (ej. OU=Users,OU=Good,OU=Sites,DC=EguibarIT,DC=local).</para>
+                <para type="description">Distinguished Name of the container where the Service Accounts are located.</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.ScheduleServiceAccounts.SAGroupName">
+            <summary>
+                <para type="inputType">[STRING] Name of the corresponding tier service account group (For tier0: SG_T0SA; for Tier1: SG_T1SA; for Tier2: SG_T2SA)</para>
+                <para type="description">Name of the corresponding tier service account group (For tier0: SG_T0SA; for Tier1: SG_T1SA; for Tier2: SG_T2SA).</para>
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.ScheduleServiceAccounts.BeginProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.ScheduleServiceAccounts.ProcessRecord">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.ScheduleServiceAccounts.EndProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.ScheduleServiceAccounts.StopProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:EguibarIT.Housekeeping.CMDlets.ScheduleEventTask" -->
+        <member name="P:EguibarIT.Housekeeping.CMDlets.ScheduleEventTask.ServiceAccount">
+            <summary>
+                <para type="inputType">[STRING] SamAccountName of the group managed service account used to execute the scheduled task.</para>
+                <para type="description">SamAccountName of the service account (or gMSA) used to execute the scheduled task.</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.ScheduleEventTask.PsArguments">
+            <summary>
+                <para type="inputType">[STRING] PsArguments provides the arguments for PowerShell. A command or a PS! file can be parsed</para>
+                <para type="description">Arguments for PowerShell to execute.</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.ScheduleEventTask.EventID">
+            <summary>
+                <para type="inputType">[STRING] EventID that will trigger this task</para>
+                <para type="description">EventID that will trigger this task</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.ScheduleEventTask.Logname">
+            <summary>
+                <para type="inputType">[STRING] Logname is the name of the log file where the EventID is going to be generated.</para>
+                <para type="description">Name of the log file</para>
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.ScheduleEventTask.BeginProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.ScheduleEventTask.ProcessRecord">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.ScheduleEventTask.EndProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.ScheduleEventTask.StopProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.CMDlets.SemiPrivilegedKeyPairCheck">
+            <summary>
+            <para type="synopsis">Integrity check of Semi-Privileged accounts.</para>
+            <para type="description">A Semi-Privileged account can only exist if a Non-Privileged account (standard user) does exists. This is called Key-Pair. 
+            If the key-pair non-privileged account (standard user) gets disabled, the semi-privileged account must be disabled as well. 
+            If the key-pair non-privileged account (standard user) does not exist, the Semi-Privileged account must be deleted inmediatelly. 
+            This function will read all Semi-Privileged accounts and will search its key-pair (SID of the non privileged account), 
+            applying the mentioned actions. 
+            For this check to work properly, all semi-privileged accounts should have the non-privileged SID stored on the 
+            employeeNumber attribute.</para>
+                <example>
+                    <para>This example shows how to use this CMDlet. </para>
+                    <para>-        </para>
+                    <para>
+                        <code>Set-SemiPrivilegedKeyPairCheck "OU=Users,OU=Admin,DC=EguibarIT,DC=local" "TheGood", "TheUgly"</code>
+                    </para>
+                </example>
+                <example>
+                    <para>This example shows how to use this CMDlet using named parameters. </para>
+                    <para>-        </para>
+                    <para>
+                        <code>Set-SemiPrivilegedKeyPairCheck -AdminUsersDN "OU=Users,OU=Admin,DC=EguibarIT,DC=local" -ExcludeList "TheGood", "TheUgly"</code>
+                    </para>
+                </example>
+                <example>
+                    <para>This example shows how to use this CMDlet using splatting. </para>
+                    <para>-        </para>
+                    <para>
+                    <code>$params = @{
+                        AdminUsersDN = "OU=Users,OU=Admin,DC=EguibarIT,DC=local"
+                        ExcludeList  = "TheGood", "TheUgly"
+                        Verbose      = $True
+                    }
+                    Set-SemiPrivilegedKeyPairCheck @params
+                    </code>
+                    </para>
+                </example>
+            <remarks>Ensures only each Semi-Privileged users does have a valid Non-Privileged user.</remarks>
+            </summary>
+            <para type="link" uri="(http://EguibarIT.eu)">[Eguibar Information Technology S.L. web site]</para>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.SemiPrivilegedKeyPairCheck.AdminUsersDN">
+            <summary>
+            <para type="inputType">[STRING] Admin User Account OU Distinguished Name. (ej. OU=Users,OU=Admin,DC=EguibarIT,DC=local).</para>
+            <para type="description">Distinguished Name of the container where the users are located.</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.SemiPrivilegedKeyPairCheck.ExcludeList">
+            <summary>
+            <para type="inputType">List[STRING] user list array</para>
+            <para type="description">Userlist to be excluded from this process.</para>
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.SemiPrivilegedKeyPairCheck.BeginProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.SemiPrivilegedKeyPairCheck.ProcessRecord">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.SemiPrivilegedKeyPairCheck.EndProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.SemiPrivilegedKeyPairCheck.StopProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.CMDlets.SemiPrivilegedUsersPwdReset">
+            <summary>
+            <para type="synopsis">Reset password of semi-privileged user</para>
+            <para type="description">Reset password of semi-privileged user</para>
+                <example>
+                    <para>This example shows how to use this CMDlet</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Set-SemiPrivilegedUsersPwdReset dvader_t0</code>
+                    </para>
+                </example>
+                <example>
+                    <para>This example shows how to use this CMDlet using named parameters</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Set-SemiPrivilegedUsersPwdReset -SamAccountName dvader_t0</code>
+                    </para>
+            </example>
+            <remarks>Reset password of semi-privileged user</remarks>
+            </summary>
+            <para type="link" uri="(http://EguibarIT.eu)">[Eguibar Information Technology S.L. web site]</para>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.SemiPrivilegedUsersPwdReset.SamAccountName">
+            <summary>
+            <para type="inputType">[STRING] representing the user SamAccountName.</para>
+            <para type="description">Identity of the Semi-Privileged user which will have a new password.</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.SemiPrivilegedUsersPwdReset.From">
+            <summary>
+            <para type="inputType">[STRING] representing the valid E-mail address of sender.</para>
+            <para type="description">Valid Email of the sending user. This address will be used to send the information and for authenticate to the SMTP server.</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.SemiPrivilegedUsersPwdReset.CredentialUser">
+            <summary>
+            <para type="inputType">[STRING] representing the valid user for authenticating to SMTP.</para>
+            <para type="description">User for authenticate to the SMTP server.</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.SemiPrivilegedUsersPwdReset.CredentialPassword">
+            <summary>
+            <para type="inputType">[STRING] representing the valid password for authenticating to SMTP (User is E-mail address of sender).</para>
+            <para type="description">Password for authenticate to the SMTP server.</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.SemiPrivilegedUsersPwdReset.SMTPserver">
+            <summary>
+            <para type="inputType">[STRING] representing the SMTP server.</para>
+            <para type="description">SMTP server.</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.SemiPrivilegedUsersPwdReset.SMTPport">
+            <summary>
+            <para type="inputType">[INT] representing the SMTP port number.</para>
+            <para type="description">SMTP port number.</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.SemiPrivilegedUsersPwdReset.PwdBodyTemplate">
+            <summary>
+            <para type="inputType">[STRING] representing the Password body template file.</para>
+            <para type="description">Path to the Password body template file.</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.SemiPrivilegedUsersPwdReset.SendByEmail">
+            <summary>
+            <para type="inputType">[SWITCH] indicating if password has to be sent by encrypted email.</para>
+            <para type="description">If present, will send the new password by encrypted email.</para>
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.SemiPrivilegedUsersPwdReset.BeginProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.SemiPrivilegedUsersPwdReset.ProcessRecord">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.SemiPrivilegedUsersPwdReset.EndProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.SemiPrivilegedUsersPwdReset.StopProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.CMDlets.AdSemiPrivilegedUsersReport">
+            <summary>
+            <para type="synopsis">Report on Semi-Privileged Users.</para>
+            <para type="description">Provides a full report on existing Privileged and Semi-Privileged users. 
+            For this CMDlet to work properly, ALL privileged and SemiPrivileged accounts. 
+            must be located within the same OU. Failing to have all users located on the 
+            mentioned container will show an incorrect report.</para>
+                <example>
+                    <para>This example shows how to use this CMDlet</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Get-AdSemiPrivilegedUsersReport "OU=Admin Users,OU=Admin,DC=EguibarIT,DC=local"</code>
+                    </para>
+                </example>
+                <example>
+                    <para>This example shows how to use this CMDlet indicating report path</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Get-AdSemiPrivilegedUsersReport "OU=Admin Users,OU=Admin,DC=EguibarIT,DC=local" "C:\Reports\"</code>
+                    </para>
+                </example>
+                <example>
+                    <para>This example shows how to use this CMDlet using named parameters</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Get-AdSemiPrivilegedUsersReport -AdminUsersDN "OU=Admin Users,OU=Admin,DC=EguibarIT,DC=local"</code>
+                    </para>
+                </example>
+                <example>
+                    <para>This example shows how to use this CMDlet using named parameters including path for the report</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Get-AdSemiPrivilegedUsersReport -AdminUsersDN "OU=Admin Users,OU=Admin,DC=EguibarIT,DC=local" -Path "C:\Reports\"</code>
+                    </para>
+                 </example>
+            <remarks>Report on Semi-Privileged Users.</remarks>
+            </summary>
+            <para type="link" uri="(http://EguibarIT.eu)">[Eguibar Information Technology S.L. web site]</para>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.AdSemiPrivilegedUsersReport.AdminUsersDN">
+            <summary>
+            <para type="inputType">[STRING] Admin User Account OU Distinguished Name. (ej. OU=Users,OU=Good,OU=Sites,DC=EguibarIT,DC=local).</para>
+            <para type="description">Distinguished Name of the container where the Admin users are located.</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.AdSemiPrivilegedUsersReport.Path">
+            <summary>
+            <para type="inputType">[STRING] Path where the HTML report will be saved. (ej. C:\Reports\MyReport.html).</para>
+            <para type="description">Path where the HTML report will be saved.</para>
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AdSemiPrivilegedUsersReport.BeginProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AdSemiPrivilegedUsersReport.ProcessRecord">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AdSemiPrivilegedUsersReport.EndProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AdSemiPrivilegedUsersReport.StopProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.CMDlets.ServiceAccountHousekeeping">
+            <summary>
+            <para type="synopsis">Function for ServiceAccount housekeeping</para>
+            <para type="description">For each of the service accounts stored within the SA container, make it part  
+            of the corresponding service account group based on its tier. 
+            For example, the container of Tier0 service accounts must belong to the group SG_T0SA.</para>
+                <example>
+                    <para>This example shows how to use this CMDlet</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Set-ServiceAccountHousekeeping "OU=T0,OU=SA,OU=Admin,DC=EguibarIT,DC=local" SG_T0SA</code>
+                    </para>
+                </example>
+                <example>
+                    <para>This example shows how to use this CMDlet using named parameters</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Set-ServiceAccountHousekeeping -ServiceAccountDN "OU=T0,OU=SA,OU=Admin,DC=EguibarIT,DC=local" -SAGroupName SG_T0SA</code>
+                    </para>
+            </example>
+            <remarks>Ensure each Service Account is member of the corresponding tier group.</remarks>
+            </summary>
+            <para type="link" uri="(http://EguibarIT.eu)">[Eguibar Information Technology S.L. web site]</para>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.ServiceAccountHousekeeping.ServiceAccountDN">
+            <summary>
+            <para type="inputType">[STRING] representing the Distinguished Name of the object (ej. OU=Users,OU=Good,OU=Sites,DC=EguibarIT,DC=local).</para>
+            <para type="description">Distinguished Name of the container where the Service Accounts are located.</para>
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.ServiceAccountHousekeeping.SAGroupName">
+            <summary>
+            <para type="inputType">[STRING] Name of the corresponding tier service account group (For tier0: SG_T0SA; for Tier1: SG_T1SA; for Tier2: SG_T2SA)</para>
+            <para type="description">Name of the corresponding tier service account group (For tier0: SG_T0SA; for Tier1: SG_T1SA; for Tier2: SG_T2SA).</para>
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.ServiceAccountHousekeeping.BeginProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.ServiceAccountHousekeeping.ProcessRecord">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.ServiceAccountHousekeeping.EndProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.ServiceAccountHousekeeping.StopProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.CMDlets.AdStaleUser">
+            <summary>
+            <para type="synopsis">Find stale users in domain.</para>
+            <para type="description">A stale user is a user which has not logon to the domain in a certain period of time. 
+            This time is calculated on the AD attribute LastLogonTimestamp. When this value is older than the 
+            value provided on the DaysOffset, the user is considered as stale. If the parameter 
+            DaysOffset (integer) is ommited,a default value of 45 will be used. 
+            The return object is a list of UserPrincipal Extended.</para>
+                <example>
+                    <para>This example shows how to use this CMDlet</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Get-AdStaleUser 30</code>
+                    </para>
+                </example>
+                <example>
+                    <para>This example shows how to use this CMDlet using named parameters</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Get-AdStaleUser -DaysOffset 30</code>
+                    </para>
+                </example>
+            <remarks>Find stale users in domain.</remarks>
+            </summary>
+            <para type="link" uri="(http://EguibarIT.eu)">[Eguibar Information Technology S.L. web site]</para>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.AdStaleUser.DaysOffset">
+            <summary>
+            <para type="inputType">[INT] Integer representing days offset to search for the stale user.</para>
+            <para type="description">Days offset to search for the stale user.</para>
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AdStaleUser.BeginProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AdStaleUser.ProcessRecord">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AdStaleUser.EndProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AdStaleUser.StopProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.CMDlets.AdStaleComputer">
+            <summary>
+            <para type="synopsis">Find stale computer in domain.</para>
+            <para type="description">A stale computer is a computer which has not logon to the domain in a certain period of time. 
+            This time is calculated on the AD attribute LastLogonTimestamp. When this value is older than the 
+            value provided on the DaysOffset, the user is considered as stale. If the parameter  
+            DaysOffset (integer) is ommited,a default value of 45 will be used. 
+            The return object is a list of ComputerPrincipal Extended.</para>
+                <example>
+                    <para>This example shows how to use this CMDlet</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Get-AdStaleComputer 30</code>
+                    </para>
+                </example>
+                <example>
+                    <para>This example shows how to use this CMDlet using named parameters</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Get-AdStaleComputer -DaysOffset 30</code>
+                    </para>
+            </example>
+            <remarks>Find stale computer in domain.</remarks>
+            </summary>
+            <para type="link" uri="(http://EguibarIT.eu)">[Eguibar Information Technology S.L. web site]</para>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.AdStaleComputer.DaysOffset">
+            <summary>
+            <para type="inputType">[INT] Integer representing days offset to search for the stale computer.</para>
+            <para type="description">Days offset to search for the stale computer.</para>
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AdStaleComputer.BeginProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AdStaleComputer.ProcessRecord">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AdStaleComputer.EndProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AdStaleComputer.StopProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.CMDlets.AdUnLinkedGPO">
+            <summary>
+            <para type="synopsis">Find unlinked GPOs</para>
+            <para type="description">Find unlinked GPO in the domain. Remove those if switch is present</para>
+                <example>
+                    <para>This example shows how to use this CMDlet</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Get-AdUnLinkedGPO</code>
+                    </para>
+                </example>
+                <example>
+                    <para>This example shows how to use this CMDlet using named parameters</para>
+                    <para>-        </para>
+                    <para>
+                        <code>Get-AdUnLinkedGPO -RemoveUnLinkedGpo</code>
+                    </para>
+                </example>
+            <remarks>Find unlinked GPOs</remarks>
+            </summary>
+            <para type="link" uri="(http://EguibarIT.eu)">[Eguibar Information Technology S.L. web site]</para>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.CMDlets.AdUnLinkedGPO.RemoveUnLinkedGpo">
+            <summary>
+            <para type="inputType">[SWITCH] parameter (true or false). If present the value becomes TRUE, and the UnLinked GPOs will be removed</para>
+            <para type="description">Switch indicator to remove the UnLinked GPOs</para>
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AdUnLinkedGPO.BeginProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AdUnLinkedGPO.ProcessRecord">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AdUnLinkedGPO.EndProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.CMDlets.AdUnLinkedGPO.StopProcessing">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.AdHelper.AdDomain">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.AdDomain.GetAdFQDN">
+            <summary>
+            Gets the AD FQDS from current domain
+            </summary>
+            <returns>AD Fully Qualified Domain Name - FQDN</returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.AdDomain.GetNetbiosDomainName(System.String)">
+            <summary>
+            Gets NetBIOS domain name from DNS Domain Name
+            </summary>
+            <param name="dnsDomainName"></param>
+            <returns>AD NetBIOS domain Name</returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.AdDomain.GetNetbiosDomainName">
+            <summary>
+            Gets NetBIOS domain name finding the current AD FQDN
+            </summary>
+            <returns>AD NetBIOS domain Name</returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.AdDomain.GetdefaultNamingContext">
+            <summary>
+            Get the "Default Naming Context" form the current Domain/Forest
+            </summary>
+            <returns>Default Naming Context</returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.AdDomain.GetConfigurationNamingContext">
+            <summary>
+            Get the "Configuration Naming Context" form the current Domain/Forest
+            </summary>
+            <returns>Configuration Naming Context</returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.AdDomain.GetschemaNamingContext">
+            <summary>
+            Get the "Schema Naming Context" form the current Domain/Forest
+            </summary>
+            <returns>Schema Naming Context</returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.AdDomain.GetrootDomainNamingContext">
+            <summary>
+            Get the "Root Domain Naming Context" form the current Domain/Forest
+            </summary>
+            <returns>Root Domain Naming Context</returns>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.AdHelper.ActiveDirectoryHelper">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.ActiveDirectoryHelper.ToADDateString(System.DateTime)">
+            <summary>
+            Method to convert date to AD format
+            </summary>
+            <param name="date">date to convert</param>
+            <returns>string containing AD formatted date</returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.ActiveDirectoryHelper.GetObjectDistinguishedName(EguibarIT.Housekeeping.AdHelper.objectClass,EguibarIT.Housekeeping.AdHelper.returnType,System.String,System.String)">
+             <summary>
+            
+             </summary>
+             <param name="objectCls"></param>
+             <param name="returnValue"></param>
+             <param name="objectName"></param>
+             <param name="LdapDomain"></param>
+             <returns></returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.ActiveDirectoryHelper.ConvertDNtoGUID(System.String)">
+             <summary>
+            
+             </summary>
+             <param name="objectDN"></param>
+             <returns></returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.ActiveDirectoryHelper.ConvertGuidToDn(System.String)">
+             <summary>
+            
+             </summary>
+             <param name="GUID"></param>
+             <returns></returns>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.AdHelper.ADManager">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.ADManager.#ctor">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.ADManager.#ctor(System.String)">
+            <summary>
+            Set the domain context
+            </summary>
+            <param name="domain"></param>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.ADManager.#ctor(System.String,System.String)">
+            <summary>
+            Set the domain context and container
+            </summary>
+            <param name="domain"></param>
+            <param name="container"></param>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.ADManager.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Set the domain context providing user and password
+            </summary>
+            <param name="domain">Domain name.</param>
+            <param name="username"></param>
+            <param name="password"></param>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.ADManager.AddUserToGroup(System.String,System.String)">
+            <summary>
+            Add a user to a group.
+            </summary>
+            <param name="userName"></param>
+            <param name="groupName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.ADManager.RemoveUserFromGroup(System.String,System.String)">
+             <summary>
+            
+             </summary>
+             <param name="userName"></param>
+             <param name="groupName"></param>
+             <returns></returns>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.AdHelper.AD_Object">
+            <summary>
+            Class representing an generic AD object
+            This class is used to inherit
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_Object.ObjectGuid">
+             <summary>
+             The bytes that make up the identifier.
+             </summary>
+             <returns>A byte array</returns>
+            <remarks>This is the format that is stored in the Active Directory repository.</remarks>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_Object.ObjectSID">
+            <summary>
+            The bytes that make up the sid.
+            </summary>
+            <returns>A byte array</returns>
+            <remarks>This is the format that is stored in the Active Directory repository.</remarks>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.AdHelper.AdProperties">
+            <summary>
+            Active Directory Properties constants
+            </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.AdHelper.objectClass">
+            <summary>
+            Active Directory object Classess constants
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.objectClass.user">
+            <summary>
+            User Object Class
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.objectClass.group">
+            <summary>
+            Group Object Class
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.objectClass.computer">
+            <summary>
+            Computer Object Class
+            </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.AdHelper.returnType">
+            <summary>
+            Return Type constants
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.returnType.cn">
+            <summary>
+            CommonName (cn)
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.returnType.distinguishedName">
+            <summary>
+            distinguishedName
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.returnType.email">
+            <summary>
+            Email address
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.returnType.Guid">
+            <summary>
+            Global Unique Identifier (Guid)
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.returnType.ObjectGUID">
+            <summary>
+            GUID
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.returnType.ntName">
+            <summary>
+            NT Name as Domain\user
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.returnType.SamAccountName">
+            <summary>
+            SamAccountName
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.returnType.SID">
+            <summary>
+            Security Identifier (SID)
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.returnType.upn">
+            <summary>
+            User Principal Name (upn)
+            </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.AdHelper.UserAccountControl">
+            <summary>
+            These are the available flags for the userAccountControl value
+            https://support.microsoft.com/en-us/help/305144/how-to-use-the-useraccountcontrol-flags-to-manipulate-user-account-pro
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.UserAccountControl.SCRIPT">
+             <summary>
+             The logon script is executed. (int 1)
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.UserAccountControl.ACCOUNTDISABLE">
+             <summary>
+             The user account is disabled. (int 2)
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.UserAccountControl.HOMEDIR_REQUIRED">
+             <summary>
+             The home directory is required. (int 8)
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.UserAccountControl.LOCKOUT">
+             <summary>
+             The account is currently locked out. (int 16)
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.UserAccountControl.PASSWD_NOTREQD">
+             <summary>
+             No password is required. (int 32)
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.UserAccountControl.PASSWD_CANT_CHANGE">
+             <summary>
+             The user cannot change the password. (int 64)
+            </summary>
+             <remarks>
+             Note:  You cannot assign the permission settings of PASSWD_CANT_CHANGE by directly modifying the UserAccountControl attribute.
+             For more information and a code example that shows how to prevent a user from changing the password, see User Cannot Change Password.
+             </remarks>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.UserAccountControl.ENCRYPTED_TEXT_PASSWORD_ALLOWED">
+             <summary>
+             The user can send an encrypted password. (int 128)
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.UserAccountControl.TEMP_DUPLICATE_ACCOUNT">
+             <summary>
+             This is an account for users whose primary account is in another domain. This account provides user access to this domain, but not
+             to any domain that trusts this domain. Also known as a local user account. (int 256)
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.UserAccountControl.NORMAL_ACCOUNT">
+             <summary>
+             This is a default account type that represents a typical user. (int 512)
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.UserAccountControl.INTERDOMAIN_TRUST_ACCOUNT">
+             <summary>
+             This is a permit to trust account for a system domain that trusts other domains. (int 2048)
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.UserAccountControl.WORKSTATION_TRUST_ACCOUNT">
+             <summary>
+             This is a computer account for a computer that is a member of this domain. (int 4096)
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.UserAccountControl.SERVER_TRUST_ACCOUNT">
+             <summary>
+             This is a computer account for a system backup domain controller that is a member of this domain. (int 8192)
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.UserAccountControl.Unused1">
+             <summary>
+             Not used.
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.UserAccountControl.Unused2">
+             <summary>
+             Not used.
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.UserAccountControl.DONT_EXPIRE_PASSWD">
+             <summary>
+             The password for this account will never expire. (int 65536)
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.UserAccountControl.MNS_LOGON_ACCOUNT">
+             <summary>
+             This is an MNS logon account. (int 131072)
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.UserAccountControl.SMARTCARD_REQUIRED">
+             <summary>
+             The user must log on using a smart card. (int 262144)
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.UserAccountControl.TRUSTED_FOR_DELEGATION">
+             <summary>
+             The service account (user or computer account), under which a service runs, is trusted for Kerberos delegation. Any such service
+             can impersonate a client requesting the service. (int 524288)
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.UserAccountControl.NOT_DELEGATED">
+             <summary>
+             The security context of the user will not be delegated to a service even if the service account is set as trusted for Kerberos delegation. (int 1048576)
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.UserAccountControl.USE_DES_KEY_ONLY">
+             <summary>
+             Restrict this principal to use only Data Encryption Standard (DES) encryption types for keys. (int 2097152)
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.UserAccountControl.DONT_REQUIRE_PREAUTH">
+             <summary>
+             This account does not require Kerberos pre-authentication for logon. (int 4194304)
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.UserAccountControl.PASSWORD_EXPIRED">
+             <summary>
+             The user password has expired. This flag is created by the system using data from the Pwd-Last-Set attribute and the domain policy. (int 8388608)
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.UserAccountControl.TRUSTED_TO_AUTHENTICATE_FOR_DELEGATION">
+             <summary>
+             The account is enabled for delegation. This is a security-sensitive setting; accounts with this option enabled should be strictly
+             controlled. This setting enables a service running under the account to assume a client identity and authenticate as that user to
+             other remote servers on the network.(int 16777216 )
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.UserAccountControl.PARTIAL_SECRETS_ACCOUNT">
+            <summary>
+            (int 67108864 )
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.UserAccountControl.USE_AES_KEYS">
+            <summary>
+            (int 134217728 )
+            </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.AdHelper.AccountStatus">
+            <summary>
+            The result after an authentication attempt.
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.AccountStatus.UserNotFound">
+            <summary>
+            No user found matching the supplied account credentials. Typically a typo.
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.AccountStatus.Success">
+            <summary>
+            The user supplied the correct credentials and successfully authenticated.
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.AccountStatus.InvalidPassword">
+            <summary>
+            The user supplied the wrong password for the account.
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.AccountStatus.ExpiredPassword">
+            <summary>
+            The user's password is expired and must be changed. Typically this expires every 90 days.
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.AccountStatus.MustChangePassword">
+            <summary>
+            The "user must change password at next logon" since LastPasswordSet=null. Typically for new accounts.
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.AccountStatus.UserLockedOut">
+            <summary>
+            The user account is locked. Typically too many incorrect attempts.
+            </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.AdHelper.LoginResult">
+            <summary>
+            Login results
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.LoginResult.LOGIN_OK">
+            <summary>
+            Login OK
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.LoginResult.LOGIN_USER_DOESNT_EXIST">
+            <summary>
+            User does not exist
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.LoginResult.LOGIN_USER_ACCOUNT_INACTIVE">
+            <summary>
+            User Inactive
+            </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.AdHelper.UserStatus">
+            <summary>
+            User account status
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.UserStatus.Enable">
+            <summary>
+            User Enabled
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.UserStatus.Disable">
+            <summary>
+            User Disabled
+            </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.AdHelper.GroupScope">
+            <summary>
+            Group Scope
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.GroupScope.ADS_GROUP_TYPE_DOMAIN_LOCAL_GROUP">
+            <summary>
+            Domain Local Group
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.GroupScope.ADS_GROUP_TYPE_GLOBAL_GROUP">
+            <summary>
+            Global Group
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.GroupScope.ADS_GROUP_TYPE_UNIVERSAL_GROUP">
+            <summary>
+            Universal Group
+            </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.AdHelper.Ocurrences">
+            <summary>
+            Defines the occurrences (or triggers) for the scheduled task
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.Ocurrences.One">
+            <summary>
+            One occurrence within 24 hours
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.Ocurrences.Two">
+            <summary>
+            Two occurrence within 24 hours. One each 12 hours
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.Ocurrences.Three">
+            <summary>
+            Three occurrence within 24 hours. One each 8 hours
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.Ocurrences.Four">
+            <summary>
+            Four occurrence within 24 hours. One each 6 hours
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.Ocurrences.Six">
+            <summary>
+            Six occurrence within 24 hours. One each 4 hours
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.Ocurrences.Eight">
+            <summary>
+            Eight occurrence within 24 hours. One each 3 hours
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.Ocurrences.Twelve">
+            <summary>
+            Twelve occurrence within 24 hours. One each 2 hours
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.Ocurrences.Twentyfour">
+            <summary>
+            Twentyfour occurrence within 24 hours. One each 1 hours
+            </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.AdHelper.Ocurrences.Fortyeight">
+            <summary>
+            Fortyeight occurrence within 24 hours. One each half hour
+            </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.AdHelper.AD_Group">
+            <summary>
+            Class representing an AD Group object
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_Group.adminCount">
+            <summary>
+            The AdminCount attribute.
+            If 0 object is not protected by the AdminSDHolder process
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_Group.CommonName">
+            <summary>
+            The common name that is usually the same as DisplayName.
+            Example: Darth Vader
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_Group.Description">
+            <summary>
+            Contains the description to display for an object.
+            This value is restricted as single-valued for backward compatibility in some cases.
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_Group.DisplayName">
+            <summary>
+            The display name for an object.
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_Group.DistinguishedName">
+            <summary>
+            Same as the Distinguished Name for an object.
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_Group.groupType">
+            <summary>
+            The groupType (Security or Distribution)
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_Group.EmailAddress">
+            <summary>
+            The email address for this contact.
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_Group.name">
+            <summary>
+            The name attribute
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_Group.ObjectGuid">
+            <summary>
+            GUID of object
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_Group.ObjectSID">
+            <summary>
+            SID of object
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_Group.SamAccountName">
+            <summary>
+            The logon name used to support clients and servers running earlier versions of the operating system.
+            This attribute must be 20 characters or less to support earlier clients.
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.AD_Group.#ctor">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.AD_Group.#ctor(System.DirectoryServices.DirectoryEntry)">
+            <summary>
+            Constructor method with parameters
+            </summary>
+            <param name="de">DirectoryEntry for the object to be loaded</param>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.AD_Group.GetGroup(System.DirectoryServices.DirectoryEntry)">
+            <summary>
+            Returns the AD_Group object from the given DirectoryEntry
+            </summary>
+            <param name="de">DirectoryEntry</param>
+            <returns>AD_Group object</returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.AD_Group.GetGroupByGuid(System.Guid)">
+            <summary>
+            Get Group by Guid
+            </summary>
+            <param name="guid">Represents the GUID for the object we are searching for</param>
+            <returns>AD_Group object</returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.AD_Group.GetUserFromGroup(System.String)">
+            <summary>
+            Take a Group and return list of member users
+            </summary>
+            <param name="groupName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.AD_Group.Create(System.String,System.String)">
+             <summary>
+            
+             </summary>
+             <param name="ouPath"></param>
+             <param name="name"></param>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.AD_Group.Delete(System.String,System.String)">
+             <summary>
+            
+             </summary>
+             <param name="ouPath"></param>
+             <param name="groupPath"></param>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.AdHelper.Helpers">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.Helpers.TryGetResult``1(System.DirectoryServices.SearchResult,System.String)">
+            <summary>
+            Get the property value by providing its name from SearchResult
+            </summary>
+            <typeparam name="T">Type</typeparam>
+            <param name="result">SearchResult</param>
+            <param name="key">Name of propperty to get its value</param>
+            <returns>Value of the property</returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.Helpers.TryGetResult``1(System.DirectoryServices.DirectoryEntry,System.String)">
+            <summary>
+            Get the property value by providing its name from DirectoryEntry
+            </summary>
+            <typeparam name="T">Type</typeparam>
+            <param name="result">DirectoryEntry</param>
+            <param name="key">Name of propperty to get its value</param>
+            <returns>Value of the property</returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.Helpers.TrySetProperty(System.DirectoryServices.DirectoryEntry,System.String,System.String)">
+            <summary>
+            Set the property value
+            </summary>
+            <param name="de">DirectoryEntry</param>
+            <param name="key">Name of propperty</param>
+            <param name="PropertyValue">New value of the property</param>
+            <returns></returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.Helpers.TryGetResultList``1(System.DirectoryServices.SearchResult,System.String)">
+            <summary>
+            Get the list of property values by providing its name from SearchResult
+            </summary>
+            <typeparam name="T">Type</typeparam>
+            <param name="result">SearchResult</param>
+            <param name="key">Name of propperty to get its value</param>
+            <returns>List of values from the property</returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.Helpers.TryGetResultList``1(System.DirectoryServices.DirectoryEntry,System.String)">
+            <summary>
+            Get the list of property values by providing its name from DirectoryEntry
+            </summary>
+            <typeparam name="T">Type</typeparam>
+            <param name="result">DirectoryEntry</param>
+            <param name="key">Name of propperty to get its value</param>
+            <returns>List of values from the property</returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.Helpers.GuidToHex(System.Guid)">
+            <summary>
+            Overload - Convert System GUID to Octet (HEX) string.
+            </summary>
+            <param name="guid">System GUID</param>
+            <returns>HEX string representing GUID, including "\"</returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.Helpers.GuidToHex(System.String)">
+            <summary>
+            Overload - Convert String GUID to Octet (HEX) string.
+            </summary>
+            <param name="guid">String GUID</param>
+            <returns>HEX string representing GUID, including "\"</returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.Helpers.GuidToHex(System.Byte[])">
+            <summary>
+            Convert ByteArray GUID to Octet (HEX) string.
+            </summary>
+            <param name="guid">ByteArray GUID</param>
+            <returns>HEX string representing GUID, including "\"</returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.Helpers.GuidToReadable(System.Guid)">
+            <summary>
+            Convert System GUID to a readable format (ej. b75f1fdd-2294-40e4-85df-0ce0e39895be )
+            </summary>
+            <param name="guid">System GUID</param>
+            <returns>String in readable format representing the GUID</returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.Helpers.GuidToReadable(System.Byte[])">
+            <summary>
+            Convert ByteArray GUID to a readable format (ej. b75f1fdd-2294-40e4-85df-0ce0e39895be )
+            </summary>
+            <param name="guid">ByteArray GUID</param>
+            <returns>String in readable format representing the GUID</returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.Helpers.GetDirectoryEntry(System.String)">
+            <summary>
+            Get the DirectoryEntry from given LdapPath (ej. "LDAP://DC=EguibarIT,DC=local")
+            </summary>
+            <param name="LdapPath">"LDAP://DC=EguibarIT,DC=local"</param>
+            <returns>DirectoryEntry</returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.Helpers.GetDirectoryEntry">
+            <summary>
+            Overload - Get the DirectoryEntry from default LdapPath of current domain
+            </summary>
+            <returns>DirectoryEntry</returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.Helpers.GetDirectorySearcher(System.DirectoryServices.DirectoryEntry)">
+            <summary>
+            Get DirectorySearcher from the given DirectoryEntry
+            </summary>
+            <param name="de">DirectoryEntry</param>
+            <returns>DirectorySearcher</returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.Helpers.GetDirectorySearcher">
+            <summary>
+            Overload - Get DirectorySearcher from the default DirectoryEntry
+            </summary>
+            <returns>DirectorySearcher</returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.Helpers.Exists(System.String)">
+            <summary>
+            Verify if object exists
+            </summary>
+            <param name="objectPath">LDAP path to the given object</param>
+            <returns>Bool</returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.Helpers.Move(System.String,System.String)">
+            <summary>
+            Move an object
+            </summary>
+            <param name="objectLocation">Original DN of the object</param>
+            <param name="newLocation">Destination DN where the object will be moved to.</param>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.Helpers.Rename(System.String,System.String)">
+            <summary>
+            Rename an object
+            </summary>
+            <param name="objectDn">Object DN to be renamed</param>
+            <param name="newName">New Name of the object</param>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.AdHelper.ADUserAccountControl">
+            <summary>
+            The class creates a wrapper for the UserAccountControl value returned from Active Directory.
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.ADUserAccountControl.userAccountControlFlags">
+            <summary>
+            Returns the userAccountControl flags value
+            </summary>
+            <returns>The userAccountControl flags value</returns>
+            <remarks>This is the value that is stored in the ENUM.</remarks>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.ADUserAccountControl.#ctor(EguibarIT.Housekeeping.AdHelper.UserAccountControl)">
+            <summary>
+            Creates a new wrapper class for the userAccontControl value
+            </summary>
+            <param name="userAccountControlValue">The value from active directory</param>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.ADUserAccountControl.#ctor">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.ADUserAccountControl.scriptRunOnLogin">
+            <summary>
+            Whether or not the logon script will be run.
+            </summary>
+            <value>Set true to activate and false to deactivate</value>
+            <returns>Whether or not the flag is active</returns>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.ADUserAccountControl.accountDisabled">
+            <summary>
+            Whether or not the user account is disabled.
+            </summary>
+            <value>Set true to activate and false to deactivate</value>
+            <returns>Whether or not the flag is active</returns>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.ADUserAccountControl.homeDirectoryRequired">
+            <summary>
+            Whether or not the home folder is required.
+            </summary>
+            <value>Set true to activate and false to deactivate</value>
+            <returns>Whether or not the flag is active</returns>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.ADUserAccountControl.accountLockedOut">
+            <summary>
+            Whether or not the account is locked out.
+            </summary>
+            <value>Set true to activate and false to deactivate</value>
+            <returns>Whether or not the flag is active</returns>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.ADUserAccountControl.passwordNotRequired">
+            <summary>
+            Whether or not the password is required.
+            </summary>
+            <value>Set true to activate and false to deactivate</value>
+            <returns>Whether or not the flag is active</returns>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.ADUserAccountControl.passwordCantChange">
+            <summary>
+            Whether or not the user can change his password.
+            </summary>
+            <value>Set true to activate and false to deactivate</value>
+            <returns>Whether or not the flag is active</returns>
+            <remarks>
+            Simply setting this flag will not actually change the functionality implied.  To actually make it to where a user
+            may or may not change his password, see
+            http://msdn.microsoft.com/library/default.asp?url=/library/en-us/adsi/adsi/modifying_user_cannot_change_password_ldap_provider.asp
+            </remarks>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.ADUserAccountControl.encryptedTextPasswordAllowed">
+            <summary>
+            Whether or not the user can send an encrypted password.
+            </summary>
+            <value>Set true to activate and false to deactivate</value>
+            <returns>Whether or not the flag is active</returns>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.ADUserAccountControl.isTempDuplicateAccount">
+            <summary>
+            Whether or not this is an account for users whose primary account is in another domain. This account provides
+            user access to this domain, but not to any domain that trusts this domain. This is sometimes referred to as a local user account.
+            </summary>
+            <value>Set true to activate and false to deactivate</value>
+            <returns>Whether or not the flag is active</returns>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.ADUserAccountControl.isNormalAccount">
+            <summary>
+            Whether or not this is a default account type representing a typical user.
+            </summary>
+            <value>Set true to activate and false to deactivate</value>
+            <returns>Whether or not the flag is active</returns>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.ADUserAccountControl.isInterDomainTrustAccount">
+            <summary>
+            Whether or not this account will be trusted by domains that trust other domains.
+            </summary>
+            <value>Set true to activate and false to deactivate</value>
+            <returns>Whether or not the flag is active</returns>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.ADUserAccountControl.isWorkstationTrustAccount">
+            <summary>
+            Whether or not this is a computer account for a computer that is running Microsoft Windows NT 4.0 Workstation,
+            Microsoft Windows NT 4.0 Server, Microsoft Windows 2000 Professional, or Windows 2000 Server and is a member of this domain.
+            </summary>
+            <value>Set true to activate and false to deactivate</value>
+            <returns>Whether or not the flag is active</returns>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.ADUserAccountControl.isServerTrustAccount">
+            <summary>
+            Whether or not this is a computer account for a domain controller that is a member of this domain.
+            </summary>
+            <value>Set true to activate and false to deactivate</value>
+            <returns>Whether or not the flag is active</returns>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.ADUserAccountControl.passwordNoExpire">
+            <summary>
+            Whether or not the password should ever expire on the account.
+            </summary>
+            <value>Set true to activate and false to deactivate</value>
+            <returns>Whether or not the flag is active</returns>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.ADUserAccountControl.isMNSLogonAccount">
+            <summary>
+            Whether or not this is an MNS logon account.
+            </summary>
+            <value>Set true to activate and false to deactivate</value>
+            <returns>Whether or not the flag is active</returns>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.ADUserAccountControl.isSmartCardRequired">
+            <summary>
+            Whether or not the user should be forced to log on using a smart card.
+            </summary>
+            <value>Set true to activate and false to deactivate</value>
+            <returns>Whether or not the flag is active</returns>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.ADUserAccountControl.isTrustedForDelegation">
+            <summary>
+            When this flag is set, the service account (the user or computer account) under which a service runs is
+            trusted for Kerberos delegation. Any such service can impersonate a client requesting the service. To enable a
+            service for Kerberos delegation, you must set this flag on the <b>userAccountControl</b> property of the service account.
+            </summary>
+            <value>Set true to activate and false to deactivate</value>
+            <returns>Whether or not the flag is active</returns>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.ADUserAccountControl.notDelegated">
+            <summary>
+            When this flag is set, the security context of the user is not delegated to a service even if the service
+            account is set as trusted for Kerberos delegation.
+            </summary>
+            <value>Set true to activate and false to deactivate</value>
+            <returns>Whether or not the flag is active</returns>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.ADUserAccountControl.useDesKeyOnly">
+            <summary>
+            (Windows 2000/Windows Server 2003) Whether or not this principal is restricted to use only Data Encryption Standard (DES)
+            encryption types for keys.
+            </summary>
+            <value>Set true to activate and false to deactivate</value>
+            <returns>Whether or not the flag is active</returns>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.ADUserAccountControl.preAuthNotRequired">
+            <summary>
+            (Windows 2000/Windows Server 2003) Whether or not this account requires Kerberos pre-authentication for logging on.
+            </summary>
+            <value>Set true to activate and false to deactivate</value>
+            <returns>Whether or not the flag is active</returns>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.ADUserAccountControl.passwordExpired">
+            <summary>
+            (Windows 2000/Windows Server 2003) Whether or not the user's password has expired.
+            </summary>
+            <value>Set true to activate and false to deactivate</value>
+            <returns>Whether or not the flag is active</returns>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.ADUserAccountControl.isTrustedToAuthForDelegation">
+            <summary>
+            (Windows 2000/Windows Server 2003) The account is enabled for delegation. This is a security-sensitive setting.
+            Accounts with this option enabled should be tightly controlled. This setting allows a service that runs under the
+            account to assume a client's identity and authenticate as that user to other remote servers on the network.
+            </summary>
+            <value>Set true to activate and false to deactivate</value>
+            <returns>Whether or not the flag is active</returns>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.AdHelper.AD_UserFull">
+            <summary>
+            Class representing an AD User object
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_UserFull.adminCount">
+            <summary>
+            The AdminCount attribute.
+            If 0 object is not protected by the AdminSDHolder process
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_UserFull.City">
+            <summary>
+            Represents the name of a locality, such as a town or city.
+            City. (LDAP = l)
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_UserFull.CommonName">
+            <summary>
+            The common name that is usually the same as DisplayName.
+            Example: Darth Vader
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_UserFull.Company">
+            <summary>
+            Company. (LDAP = company)
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_UserFull.Country">
+            <summary>
+            The country/region in the address of the user.
+            The country/region is represented as a 2-character code based on ISO-3166.
+            CountryName. (LDAP = co)
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_UserFull.Department">
+            <summary>
+            Contains the name for the department in which the user works.
+            Example: Master Commander
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_UserFull.Description">
+            <summary>
+            Contains the description to display for an object.
+            This value is restricted as single-valued for backward compatibility in some cases.
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_UserFull.DisplayName">
+            <summary>
+            The display name for an object. This is usually
+            the combination of the users first name, middle initial, and last name.
+            Example: Darth Vader
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_UserFull.DistinguishedName">
+            <summary>
+            Same as the Distinguished Name for an object.
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_UserFull.EmailAddress">
+            <summary>
+            The email address for this contact.
+            Example: darth.vader@eguibarit.com
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_UserFull.TelephoneNumber">
+            <summary>
+            Telephone Number
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_UserFull.Fax">
+            <summary>
+            Fax number
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_UserFull.FirstName">
+            <summary>
+            Contains the given name (first name) of the user.
+            Example: Darth
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_UserFull.HomePhone">
+            <summary>
+            Home Telephone number
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_UserFull.LastName">
+            <summary>
+            This attribute contains the family or last name for a user.
+            Example: Vader
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_UserFull.Manager">
+            <summary>
+            Get the Manager by DistinguishedName
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_UserFull.ManagerName">
+            <summary>
+            Manager Name
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_UserFull.MiddleName">
+            <summary>
+            Middle Name
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_UserFull.Mobile">
+            <summary>
+            The primary mobile phone number.
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_UserFull.ObjectGuid">
+            <summary>
+            GUID of object
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_UserFull.ObjectSID">
+            <summary>
+            SID of object
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_UserFull.Phone">
+            <summary>
+            The primary telephone number.
+            Example: 949-672-7000
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_UserFull.PostalCode">
+            <summary>
+            Postal Code
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_UserFull.PhysicalDeliveryOfficeName">
+            <summary>
+            Office number or cubicle number.
+            Example: 1-2079
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_UserFull.SamAccountName">
+            <summary>
+            The logon name used to support clients and servers running earlier versions of the operating system.
+            This attribute must be 20 characters or less to support earlier clients.
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_UserFull.State">
+            <summary>
+            The name of a user's state or province.
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_UserFull.StreetAddress">
+            <summary>
+            Street Address
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_UserFull.Title">
+            <summary>
+            Contains the user's job title. This property is commonly used to indicate the formal job title,
+            such as Senior Programmer, rather than occupational class, such as programmer.
+            It is not typically used for suffix titles such as Esq. or DDS.
+            Example: Dark Side Master
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_UserFull.thumbnailPhoto">
+            <summary>
+            Used to store an image of a person.
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_UserFull.userAccountControl">
+            <summary>
+            User Account Control
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_UserFull.UserPrincipalName">
+            <summary>
+            This attribute contains the UPN that is an Internet-style login name for a user based on the
+            Internet standard RFC 822. The UPN is shorter than the distinguished name and easier to remember.
+            By convention, this should map to the user email name, but this is not required.
+            The value set for this attribute is equal to the length of the user's ID and the domain name.
+            Typically formatted as lastname_f@domain
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.AdHelper.AD_UserFull.aDUserAccountControl">
+            <summary>
+            Implement UserAccountControl class
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.AD_UserFull.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.AD_UserFull.#ctor(System.DirectoryServices.DirectoryEntry)">
+            <summary>
+            Constructor method with parameters
+            </summary>
+            <param name="de">DirectoryEntry for the object to be loaded</param>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.AD_UserFull.GetUser(System.DirectoryServices.DirectoryEntry)">
+            <summary>
+            Returns the AD_UserFull object from the given DirectoryEntry
+            </summary>
+            <param name="de">DirectoryEntry</param>
+            <returns>AD_UserFull object</returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.AD_UserFull.Save">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.AD_UserFull.GetUserByGuid(System.Guid)">
+            <summary>
+            Get user by Guid
+            </summary>
+            <param name="guid">Represents the GUID for the object we are searching for</param>
+            <returns>AD_UserFull object</returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.AD_UserFull.GetUserBySamAccountName(System.String)">
+            <summary>
+            Get User by SamAccountName
+            </summary>
+            <param name="samAccountName">Represents the SamAccountName for the object we are searching for</param>
+            <returns>AD_UserFull object</returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.AD_UserFull.GetUserByDistinguishedName(System.String)">
+            <summary>
+            Get user by DistinguishedName
+            </summary>
+            <param name="distinguishedName">DistinguishedName (CN=dvader,OU=Users,OUSites,DC=Eguibar,DC=local)</param>
+            <returns>AD_UserFull object</returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.AD_UserFull.GetUserByUpn(System.String)">
+            <summary>
+            Get user by UserPrincipalName (samaccountname@eguibarIT.local)
+            <param name="upn">UserPrincipalName (samaccountname@eguibarIT.local)</param>
+            </summary>
+            <returns>AD_UserFull object</returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.AD_UserFull.GetUserByEmail(System.String)">
+            <summary>
+            Get user by email address (user@eguibarIT.com)
+            <param name="email">Email address (user@eguibarIT.com)</param>
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.AD_UserFull.GetAllUsersInDomain(System.String)">
+            <summary>
+            Get all users in Domain
+            </summary>
+            <param name="DomainName">Domain name where to retrieve users from</param>
+            <returns>List of AD_UserFull object</returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.AdHelper.AD_UserFull.GetAllUsersInDomain">
+            <summary>
+            Get all users in Domain
+            </summary>
+            <returns>List of AD_UserFull object from current domain</returns>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.AdHelper.UserMethods">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.Email">
+            <summary>
+            Sending Email class
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.Email.NewEmail(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Int32,EguibarIT.Housekeeping.MailAttachment[])">
+            <summary>
+            Mail with authentication
+            </summary>
+            <param name="to"></param>
+            <param name="body"></param>
+            <param name="subject"></param>
+            <param name="fromAddress"></param>
+            <param name="fromDisplay"></param>
+            <param name="credentialUser"></param>
+            <param name="credentialPassword"></param>
+            <param name="smtphost"></param>
+            <param name="port"></param>
+            <param name="attachments"></param>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.Email.NewEmail(System.String,System.String,System.String,System.String,System.String,System.String,System.Int32,EguibarIT.Housekeeping.MailAttachment[])">
+            <summary>
+            Mail without authentication
+            </summary>
+            <param name="to"></param>
+            <param name="body"></param>
+            <param name="subject"></param>
+            <param name="fromAddress"></param>
+            <param name="fromDisplay"></param>
+            <param name="smtphost"></param>
+            <param name="port"></param>
+            <param name="attachments"></param>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.Email.NewEncryptedMail(System.String,System.String,System.String)">
+            <summary>
+            Encrypted email (must have C:\PsScripts\Send-EncryptedEmail.ps1)
+            </summary>
+            <param name="to"></param>
+            <param name="from"></param>
+            <param name="body"></param>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.Email.NewSemiPrivilegedUserEmail(System.String,System.String,System.String,System.String,System.String,System.String,System.Int32,EguibarIT.Housekeeping.MailAttachment[])">
+             <summary>
+            
+             </summary>
+             <param name="to"></param>
+             <param name="body"></param>
+             <param name="from"></param>
+             <param name="credentialUser"></param>
+             <param name="credentialPassword"></param>
+             <param name="smtphost"></param>
+             <param name="port"></param>
+             <param name="attachments"></param>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.MailAttachment">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.MailAttachment.Data">
+            <summary>
+            Gets the data stream for this attachment
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.MailAttachment.Filename">
+            <summary>
+            Gets the original filename for this attachment
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.MailAttachment.MediaType">
+            <summary>
+            Gets the attachment type: Bytes or String
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.MailAttachment.File">
+            <summary>
+            Gets the file for this attachment (as a new attachment)
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.MailAttachment.MemoryStream">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.MailAttachment.#ctor(System.Byte[],System.String)">
+            <summary>
+            Construct a mail attachment form a byte array
+            </summary>
+            <param name="data">Bytes to attach as a file</param>
+            <param name="filename">Logical filename for attachment</param>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.MailAttachment.#ctor(System.String,System.String)">
+            <summary>
+            Construct a mail attachment from a string
+            </summary>
+            <param name="data">String to attach as a file</param>
+            <param name="filename">Logical filename for attachment</param>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.MailAttachment.#ctor(System.IO.MemoryStream,System.String)">
+            <summary>
+            Construct a mail attachment from a Memory String
+            </summary>
+            <param name="data">Memory stream containing the image</param>
+            <param name="filename">Logical filename for attachment</param>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.HTML">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.HTML._newID">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.HTML._newPWD">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.HTML._SemiPrivilegedUsersReport">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.HTML._SemiPrivilegedUsersReportTableHeaders">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.GetFromAd">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.GetFromAd.GetGroupMembers(System.String)">
+            <summary>
+            Get the Group Members of a given AD Group
+            </summary>
+            <param name="GroupName"></param>
+            <returns>List(Principal) of users which are members of the group</returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.GetFromAd.GetUsersFromOU(System.String)">
+            <summary>
+            Get all users contained in a OU
+            </summary>
+            <param name="OuDN">Organizational Unit DistinguishedName</param>
+            <returns>List(Principal) of users which are contained on the OU</returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.GetFromAd.GetMSAsFromOU(System.String)">
+            <summary>
+            Get all Managed Service Accounts from a given OU
+            </summary>
+            <param name="OuDN">Organizational Unit DistinguishedName</param>
+            <returns>List(Principal) of Managed Service Accounts which are contained on the OU</returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.GetFromAd.GetDirectorySubNet">
+            <summary>
+            Reads ALL subnets from AD
+            </summary>
+            <returns>List of type IPAddressRange</returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.GetFromAd.GetDirectorySites">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.GetFromAd.GetDirectorySitesAndSubnets">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.Helpers">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.Helpers.ClearAdminCount(System.String)">
+            <summary>
+            Get user or group by SamAccountName, clear the attribute and reset the object security inheritance.
+            </summary>
+            <param name="SamAccountName"></param>
+            <returns>String indicating the result</returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.Helpers.StaleUsers(System.Int32)">
+            <summary>
+            Find staled users by Last Logon date offset
+            </summary>
+            <param name="DaysOffset">Time span of days as Int</param>
+            <returns>List of UserPrincipalEx objects which has not logon in the DaysOffset time</returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.Helpers.StaleComputers(System.Int32)">
+            <summary>
+            Find staled computers by Last Logon date offset
+            </summary>
+            <param name="DaysOffset">Time span of days as Int</param>
+            <returns>List of ComputerPrincipalEx objects which has not logon in the DaysOffset time</returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.Helpers.RandomPassword(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Int32)">
+            <summary>
+            Generates a random password based on the rules passed in the parameters
+            </summary>
+            <param name="includeLowercase">Bool to say if lowercase are required</param>
+            <param name="includeUppercase">Bool to say if uppercase are required</param>
+            <param name="includeNumeric">Bool to say if numerics are required</param>
+            <param name="includeSpecial">Bool to say if special characters are required</param>
+            <param name="includeSpaces">Bool to say if spaces are required</param>
+            <param name="lengthOfPassword">Length of password required. Should be between 8 and 128</param>
+            <returns>STRING representing the generated password</returns>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.IP.Bits">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.IP.Bits.Not(System.Byte[])">
+             <summary>
+            
+             </summary>
+             <param name="bytes"></param>
+             <returns></returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.IP.Bits.And(System.Byte[],System.Byte[])">
+             <summary>
+            
+             </summary>
+             <param name="A"></param>
+             <param name="B"></param>
+             <returns></returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.IP.Bits.Or(System.Byte[],System.Byte[])">
+             <summary>
+            
+             </summary>
+             <param name="A"></param>
+             <param name="B"></param>
+             <returns></returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.IP.Bits.GE(System.Byte[],System.Byte[])">
+             <summary>
+            
+             </summary>
+             <param name="A"></param>
+             <param name="B"></param>
+             <returns></returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.IP.Bits.LE(System.Byte[],System.Byte[])">
+             <summary>
+            
+             </summary>
+             <param name="A"></param>
+             <param name="B"></param>
+             <returns></returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.IP.Bits.LtE(System.Byte[],System.Byte[],System.Int32)">
+             <summary>
+            
+             </summary>
+             <param name="A"></param>
+             <param name="B"></param>
+             <param name="offset"></param>
+             <returns></returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.IP.Bits.LtECore(System.Byte[],System.Byte[],System.Int32)">
+             <summary>
+            
+             </summary>
+             <param name="A"></param>
+             <param name="B"></param>
+             <param name="offset"></param>
+             <returns></returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.IP.Bits.GtE(System.Byte[],System.Byte[],System.Int32)">
+             <summary>
+            
+             </summary>
+             <param name="A"></param>
+             <param name="B"></param>
+             <param name="offset"></param>
+             <returns></returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.IP.Bits.GtECore(System.Byte[],System.Byte[],System.Int32)">
+             <summary>
+            
+             </summary>
+             <param name="A"></param>
+             <param name="B"></param>
+             <param name="offset"></param>
+             <returns></returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.IP.Bits.IsEqual(System.Byte[],System.Byte[])">
+             <summary>
+            
+             </summary>
+             <param name="A"></param>
+             <param name="B"></param>
+             <returns></returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.IP.Bits.GetBitMask(System.Int32,System.Int32)">
+             <summary>
+            
+             </summary>
+             <param name="sizeOfBuff"></param>
+             <param name="bitLen"></param>
+             <returns></returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.IP.Bits.GetBitMaskLength(System.Byte[])">
+            <summary>
+            Counts the number of leading 1's in a bitmask.
+            Returns null if value is invalid as a bitmask.
+            </summary>
+            <param name="bytes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.IP.Bits.Increment(System.Byte[])">
+             <summary>
+            
+             </summary>
+             <param name="bytes"></param>
+             <returns></returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.IP.Bits.Decrement(System.Byte[])">
+             <summary>
+            
+             </summary>
+             <param name="bytes"></param>
+             <returns></returns>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.IP.IPAddressRange">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.IP.IPAddressRange.Begin">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.IP.IPAddressRange.End">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.IP.IPAddressRange.#ctor">
+            <summary>
+            Creates an empty range object, equivalent to "0.0.0.0/0".
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.IP.IPAddressRange.#ctor(System.Net.IPAddress)">
+            <summary>
+            Creates a new range with the same start/end address (range of one)
+            </summary>
+            <param name="singleAddress"></param>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.IP.IPAddressRange.#ctor(System.Net.IPAddress,System.Net.IPAddress)">
+            <summary>
+            Create a new range from a begin and end address.
+            Throws an exception if Begin comes after End, or the
+            addresses are not in the same family.
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.IP.IPAddressRange.#ctor(System.Net.IPAddress,System.Int32)">
+            <summary>
+            Creates a range from a base address and mask bits.
+            This can also be used with <see cref="M:EguibarIT.Housekeeping.IP.IPAddressRange.SubnetMaskLength(System.Net.IPAddress)"/> to create a
+            range based on a subnet mask.
+            </summary>
+            <param name="baseAddress"></param>
+            <param name="maskLength"></param>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.IP.IPAddressRange.#ctor(System.String)">
+             <summary>
+            
+             </summary>
+             <param name="ipRangeString"></param>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.IP.IPAddressRange.Contains(System.Net.IPAddress)">
+             <summary>
+            
+             </summary>
+             <param name="ipaddress"></param>
+             <returns></returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.IP.IPAddressRange.Contains(EguibarIT.Housekeeping.IP.IPAddressRange)">
+             <summary>
+            
+             </summary>
+             <param name="range"></param>
+             <returns></returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.IP.IPAddressRange.Parse(System.String)">
+             <summary>
+            
+             </summary>
+             <param name="ipRangeString"></param>
+             <returns></returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.IP.IPAddressRange.TryParse(System.String,EguibarIT.Housekeeping.IP.IPAddressRange@)">
+             <summary>
+            
+             </summary>
+             <param name="ipRangeString"></param>
+             <param name="ipRange"></param>
+             <returns></returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.IP.IPAddressRange.SubnetMaskLength(System.Net.IPAddress)">
+            <summary>
+            Takes a subnetmask (eg, "255.255.254.0") and returns the CIDR bit length of that
+            address. Throws an exception if the passed address is not valid as a subnet mask.
+            </summary>
+            <param name="subnetMask">The subnet mask to use</param>
+            <returns></returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.IP.IPAddressRange.GetEnumerator">
+             <summary>
+            
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.IP.IPAddressRange.ToString">
+            <summary>
+            Returns the range in the format "begin-end", or
+            as a single address if End is the same as Begin.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.IP.IPAddressRange.GetPrefixLength">
+             <summary>
+            
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.IP.IPAddressRange.ToCidrString">
+            <summary>
+            Returns a Cidr String if this matches exactly a Cidr subnet
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.IP.IPAddressRange.#ctor(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})">
+             <summary>
+            
+             </summary>
+             <param name="items"></param>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.IP.IPAddressRange.AsEnumerable">
+            <summary>
+            Returns the input typed as IEnumerable&lt;IPAddress&gt;
+            </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.LogTarget">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.LogTarget.File">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.LogBase">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.LogBase.lockObj">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.LogBase.Log(System.String)">
+             <summary>
+            
+             </summary>
+             <param name="message"></param>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.FileLogger">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:EguibarIT.Housekeeping.FileLogger.filePath">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.FileLogger.Log(System.String)">
+             <summary>
+            
+             </summary>
+             <param name="message"></param>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.LogHelper">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.LogHelper.Log(EguibarIT.Housekeeping.LogTarget,System.String)">
+             <summary>
+            
+             </summary>
+             <param name="target"></param>
+             <param name="message"></param>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.LogWriter">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.LogWriter.LogWrite(System.String)">
+             <summary>
+            
+             </summary>
+             <param name="logMessage"></param>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.ExtPrincipal.UserPrincipalEx">
+            <summary>
+            UserPrincipal extended attributes
+            https://msdn.microsoft.com/en-us/library/ms683980(v=vs.85).aspx
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.ExtPrincipal.UserPrincipalEx.#ctor(System.DirectoryServices.AccountManagement.PrincipalContext)">
+            <summary>
+            Inplement the constructor using the base class constructor.
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.ExtPrincipal.UserPrincipalEx.#ctor(System.DirectoryServices.AccountManagement.PrincipalContext,System.String,System.String,System.Boolean)">
+            <summary>
+            Implement the constructor with initialization parameters.
+            </summary>
+            <param name="context"></param>
+            <param name="samAccountName"></param>
+            <param name="password"></param>
+            <param name="enabled"></param>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.ExtPrincipal.UserPrincipalEx.adminCount">
+            <summary>
+            The AdminCount attribute.
+            If 0 object is not protected by the AdminSDHolder process
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.ExtPrincipal.UserPrincipalEx.City">
+            <summary>
+            Represents the name of a locality, such as a town or city.
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.ExtPrincipal.UserPrincipalEx.Company">
+            <summary>
+            The user's company name
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.ExtPrincipal.UserPrincipalEx.CountryName">
+            <summary>
+            The country/region in the address of the user. The country/region is represented as a 2-character code based on ISO-3166.
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.ExtPrincipal.UserPrincipalEx.Department">
+            <summary>
+            Contains the name for the department in which the user works.
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.ExtPrincipal.UserPrincipalEx.Division">
+            <summary>
+            The user's division.
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.ExtPrincipal.UserPrincipalEx.employeeNumber">
+            <summary>
+            The number assigned to an employee other than the ID
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.ExtPrincipal.UserPrincipalEx.EmployeeType">
+            <summary>
+            The job category for an employee
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.ExtPrincipal.UserPrincipalEx.LastLogonTimeStamp">
+            <summary>
+            This is the time that the user last logged into the domain.
+            This value is stored as a large integer that represents the number of 100-nanosecond intervals since January 1, 1601 (UTC).
+            Whenever a user logs on, the value of this attribute is read from the DC.
+            If the value is older [ current_time - msDS-LogonTimeSyncInterval ], the value is updated.
+            The initial update after the raise of the domain functional level is calculated as 14 days minus random percentage of 5 days.
+            Read Only
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.ExtPrincipal.UserPrincipalEx.AllowDialin">
+            <summary>
+            Indicates whether the account has permission to dial in to the RAS server
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.ExtPrincipal.UserPrincipalEx.MobilePhone">
+            <summary>
+            The primary mobile phone number
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.ExtPrincipal.UserPrincipalEx.Office">
+            <summary>
+            Contains the office location in the user's place of business
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.ExtPrincipal.UserPrincipalEx.Organization">
+            <summary>
+            The name of the company or organization
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.ExtPrincipal.UserPrincipalEx.PostalCode">
+            <summary>
+            The postal or zip code for mail delivery
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.ExtPrincipal.UserPrincipalEx.POBox">
+            <summary>
+            The post office box number for this object
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.ExtPrincipal.UserPrincipalEx.PwdLastSet">
+            <summary>
+            The date and time that the password for this account was last changed.
+            This value is stored as a large integer that represents the number of 100 nanosecond intervals since January 1, 1601 (UTC).
+            If this value is set to 0 and the User-Account-Control attribute does not contain the UF_DONT_EXPIRE_PASSWD flag, then the user must set the password at the next logon.
+            Read Only
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.ExtPrincipal.UserPrincipalEx.State">
+            <summary>
+            The name of a user's state or province
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.ExtPrincipal.UserPrincipalEx.StreetAddress">
+            <summary>
+            The street address
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.ExtPrincipal.UserPrincipalEx.SupportedEncryptionTypes">
+            <summary>
+            The encryption algorithms supported by user, computer or trust accounts.
+            NOTE: The KDC uses this information while generating a service ticket for this account.
+            Services and Computers can automatically update this attribute on their respective accounts in Active Directory, and therefore need write access to this attribute.
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.ExtPrincipal.UserPrincipalEx.TelephoneNumber">
+            <summary>
+            The primary telephone number
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.ExtPrincipal.UserPrincipalEx.Title">
+            <summary>
+            Contains the user's job title.
+            This property is commonly used to indicate the formal job title, such as Senior Programmer, rather than occupational class, such as programmer.
+            It is not typically used for suffix titles such as Esq. or DDS.
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.ExtPrincipal.UserPrincipalEx.UserAccountControl">
+            <summary>
+            Flags that control the behavior of the user account
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.ExtPrincipal.UserPrincipalEx.FindByIdentity(System.DirectoryServices.AccountManagement.PrincipalContext,System.String)">
+            <summary>
+            Implement the overloaded search method FindByIdentity.
+            </summary>
+            <param name="context"></param>
+            <param name="identityValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.ExtPrincipal.UserPrincipalEx.FindByIdentity(System.DirectoryServices.AccountManagement.PrincipalContext,System.DirectoryServices.AccountManagement.IdentityType,System.String)">
+            <summary>
+            Implement the overloaded search method FindByIdentity.
+            </summary>
+            <param name="context"></param>
+            <param name="identityType"></param>
+            <param name="identityValue"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.ExtPrincipal.ComputerPrincipalEx">
+            <summary>
+            ComputerPrincipal TelephoneNumber to include attributes
+            https://msdn.microsoft.com/en-us/library/ms680987(v=vs.85).aspx
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.ExtPrincipal.ComputerPrincipalEx.#ctor(System.DirectoryServices.AccountManagement.PrincipalContext)">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.ExtPrincipal.ComputerPrincipalEx.LastLogonTimeStamp">
+            <summary>
+            This is the time that the computer last logged into the domain.
+            This value is stored as a large integer that represents the number of 100-nanosecond intervals since January 1, 1601 (UTC).
+            Whenever a user logs on, the value of this attribute is read from the DC.
+            If the value is older [ current_time - msDS-LogonTimeSyncInterval ], the value is updated.
+            The initial update after the raise of the domain functional level is calculated as 14 days minus random percentage of 5 days.
+            Read Only
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.ExtPrincipal.ComputerPrincipalEx.OperatingSystem">
+            <summary>
+            The Operating System name, for example, Windows Vista Enterprise
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.ExtPrincipal.ComputerPrincipalEx.OperatingSystemVersion">
+            <summary>
+            The operating system version string, for example, 4.0.
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.ExtPrincipal.ComputerPrincipalEx.DnsHostName">
+            <summary>
+            Name of computer as registered in DNS
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.ExtPrincipal.ComputerPrincipalEx.FindByIdentity(System.DirectoryServices.AccountManagement.PrincipalContext,System.String)">
+            <summary>
+            Implement the overloaded search method FindByIdentity.
+            </summary>
+            <param name="context"></param>
+            <param name="identityValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.ExtPrincipal.ComputerPrincipalEx.FindByIdentity(System.DirectoryServices.AccountManagement.PrincipalContext,System.DirectoryServices.AccountManagement.IdentityType,System.String)">
+            <summary>
+            Implement the overloaded search method FindByIdentity.
+            </summary>
+            <param name="context"></param>
+            <param name="identityType"></param>
+            <param name="identityValue"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.ExtPrincipal.GroupPrincipalEx">
+            <summary>
+            UserPrincipal TelephoneNumber to include attributes
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.ExtPrincipal.GroupPrincipalEx.#ctor(System.DirectoryServices.AccountManagement.PrincipalContext)">
+            <summary>
+            Inplement the constructor using the base class constructor.
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.ExtPrincipal.GroupPrincipalEx.#ctor(System.DirectoryServices.AccountManagement.PrincipalContext,System.String,System.String,System.Boolean)">
+            <summary>
+            Implement the constructor with initialization parameters.
+            </summary>
+            <param name="context"></param>
+            <param name="samAccountName"></param>
+            <param name="password"></param>
+            <param name="enabled"></param>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.ExtPrincipal.GroupPrincipalEx.adminCount">
+            <summary>
+            The AdminCount attribute.
+            If 0 object is not protected by the AdminSDHolder process
+            </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.ExtPrincipal.GroupPrincipalEx.FindByIdentity(System.DirectoryServices.AccountManagement.PrincipalContext,System.String)">
+            <summary>
+            Implement the overloaded search method FindByIdentity.
+            </summary>
+            <param name="context"></param>
+            <param name="identityValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.ExtPrincipal.GroupPrincipalEx.FindByIdentity(System.DirectoryServices.AccountManagement.PrincipalContext,System.DirectoryServices.AccountManagement.IdentityType,System.String)">
+            <summary>
+            Implement the overloaded search method FindByIdentity.
+            </summary>
+            <param name="context"></param>
+            <param name="identityType"></param>
+            <param name="identityValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.ExtPrincipal.GroupPrincipalEx.FindByIdentity(System.DirectoryServices.AccountManagement.PrincipalContext)">
+             <summary>
+            
+             </summary>
+             <param name="contextManager"></param>
+             <returns></returns>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.TaskScheduler">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.TaskScheduler.NewScheduledTask(System.String,System.String,System.String,System.String,System.String,EguibarIT.Housekeeping.AdHelper.Ocurrences)">
+             <summary>
+            
+             </summary>
+             <param name="TaskName"></param>
+             <param name="ServiceAccount"></param>
+             <param name="Description"></param>
+             <param name="PsArguments"></param>
+             <param name="ExeActionID"></param>
+             <param name="Ocurrences"></param>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.TaskScheduler.NewScheduledEventTask(System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="TaskName"></param>
+            <param name="ServiceAccount"></param>
+            <param name="Description"></param>
+            <param name="PsArguments"></param>
+            <param name="ExeActionID"></param>
+            <param name="dicValueQueries"></param>
+            <param name="EventID"></param>
+            <param name="Logname"></param>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.TaskScheduler.NewTask(Microsoft.Win32.TaskScheduler.TaskService,System.String,System.String,System.String,System.String)">
+             <summary>
+            
+             </summary>
+             <param name="ts"></param>
+             <param name="ServiceAccount"></param>
+             <param name="Author"></param>
+             <param name="Description"></param>
+             <param name="Source"></param>
+             <returns></returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.TaskScheduler.DailyTrigger(System.Int32,System.String)">
+             <summary>
+            
+             </summary>
+             <param name="_random"></param>
+             <param name="taskID"></param>
+             <returns></returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.TaskScheduler.ExecuteAction(System.String,System.String,System.String)">
+             <summary>
+            
+             </summary>
+             <param name="id"></param>
+             <param name="execute"></param>
+             <param name="arguments"></param>
+             <returns></returns>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.TaskScheduler.FullDayTriggers(Microsoft.Win32.TaskScheduler.TaskDefinition,EguibarIT.Housekeeping.AdHelper.Ocurrences)">
+             <summary>
+            
+             </summary>
+             <param name="td"></param>
+             <param name="DailyOcurrences"></param>
+        </member>
+        <member name="M:EguibarIT.Housekeeping.TaskScheduler.EventTriggers(Microsoft.Win32.TaskScheduler.TaskDefinition,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <param name="td"></param>
+            <param name="EventID"></param>
+            <param name="Logname"></param>
+            <param name="dicValueQueries"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:EguibarIT.Housekeeping.Resources.Resource1">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.Resources.Resource1.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.Resources.Resource1.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.Resources.Resource1.Logo">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:EguibarIT.Housekeeping.Resources.Resource1.Picture1">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="T:Enum.Extensions.EnumerationExtensions">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Enum.Extensions.EnumerationExtensions.CheckIsEnum``1(System.Boolean)">
+            <summary>
+            Check if Enum
+            </summary>
+            <typeparam name="T">Type</typeparam>
+            <param name="withFlags">Flags to compare against.</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Enum.Extensions.EnumerationExtensions.IsFlagSet``1(``0,``0)" -->
+        <member name="M:Enum.Extensions.EnumerationExtensions.GetFlags``1(``0)">
+            <summary>
+            Get the Flags
+            </summary>
+            <typeparam name="T">Type</typeparam>
+            <param name="value">Value of the given Type</param>
+            <returns>IEnumerable object containing the Flags</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Enum.Extensions.EnumerationExtensions.SetFlags``1(``0,``0,System.Boolean)" -->
+        <member name="M:Enum.Extensions.EnumerationExtensions.SetFlags``1(``0,``0)">
+            <summary>
+            Overload - Set the Flags
+            </summary>
+            <typeparam name="T">Type</typeparam>
+            <param name="value">Value of the given Type</param>
+            <param name="flags">Flags to set up.</param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Enum.Extensions.EnumerationExtensions.ClearFlags``1(``0,``0)" -->
+        <member name="M:Enum.Extensions.EnumerationExtensions.CombineFlags``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Combine flags.
+            </summary>
+            <typeparam name="T">Type</typeparam>
+            <param name="flags">Flags to combine.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

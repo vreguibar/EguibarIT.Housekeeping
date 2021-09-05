@@ -1,0 +1,3908 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems schema="maml" xmlns="http://msh">
+  <!-- Cmdlet: Set-AdAdminCount -->
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>Set-AdAdminCount</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>AdAdminCount</command:noun>
+      <maml:description>
+        <maml:para>Clears adminCount attribute, and enables inherited security on the passed object (User or Group).</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Clears adminCount attribute, and enables inherited security on the passed object (User or Group).</maml:para>
+    </maml:description>
+    <command:syntax>
+      <!-- Parameter set: __AllParameterSets -->
+      <command:syntaxItem>
+        <maml:name>Set-AdAdminCount</maml:name>
+        <!-- Parameter: SamAccountName -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+          <maml:name>SamAccountName</maml:name>
+          <maml:description>
+            <maml:para>SamAccountName of the object to be reseted.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <!-- Parameter: SamAccountName -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+        <maml:name>SamAccountName</maml:name>
+        <maml:description>
+          <maml:para>SamAccountName of the object to be reseted.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] Sam Account Name of the object to be reseted.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <!-- OutputType: Int32 -->
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:examples>
+      <command:example>
+        <maml:title>----------  EXAMPLE 1  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Set-AdAdminCount dvader</maml:para>
+        </maml:introduction>
+      </command:example>
+      <command:example>
+        <maml:title>----------  EXAMPLE 2  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet using named parameters</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Set-AdAdminCount -SamAccountName dvader</maml:para>
+        </maml:introduction>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>[Eguibar Information Technology S.L. web site]</maml:linkText>
+        <maml:uri>(http://EguibarIT.eu)</maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <!-- Cmdlet: Get-AdOrphanGPO -->
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>Get-AdOrphanGPO</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>AdOrphanGPO</command:noun>
+      <maml:description>
+        <maml:para>Find orphaned GPO</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>An orphaned GPO is an AD GPO object which is missing its corresponding GPT in SYSVOL. This CMDlet can find all orphaned GPOs, and can delete them.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <!-- Parameter set: __AllParameterSets -->
+      <command:syntaxItem>
+        <maml:name>Get-AdOrphanGPO</maml:name>
+        <!-- Parameter: RemoveOrphanGPO -->
+        <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+          <maml:name>RemoveOrphanGPO</maml:name>
+          <maml:description>
+            <maml:para>Switch indicator to remove the Orphan GPO</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <!-- Parameter: RemoveOrphanGPO -->
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+        <maml:name>RemoveOrphanGPO</maml:name>
+        <maml:description>
+          <maml:para>Switch indicator to remove the Orphan GPO</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[SWITCH] parameter (true or false). If present the value becomes TRUE, and the Orphan GPO will be removed</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <!-- OutputType: String -->
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:examples>
+      <command:example>
+        <maml:title>----------  EXAMPLE 1  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Get-AdOrphanGPO</maml:para>
+        </maml:introduction>
+      </command:example>
+      <command:example>
+        <maml:title>----------  EXAMPLE 2  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet with parameters</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Get-AdOrphanGPO -RemoveOrphanGPO</maml:para>
+        </maml:introduction>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>[Eguibar Information Technology S.L. web site]</maml:linkText>
+        <maml:uri>(http://EguibarIT.eu)</maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <!-- Cmdlet: Get-AdOrphanGPT -->
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>Get-AdOrphanGPT</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>AdOrphanGPT</command:noun>
+      <maml:description>
+        <maml:para>Find orphaned GPT</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>An orphaned GPT is a SYSVOL subfolder structure which is missing its corresponding GPO in AD. This CMDlet can find all orphaned GPTs, and can delete them.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <!-- Parameter set: __AllParameterSets -->
+      <command:syntaxItem>
+        <maml:name>Get-AdOrphanGPT</maml:name>
+        <!-- Parameter: RemoveOrphanGPT -->
+        <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+          <maml:name>RemoveOrphanGPT</maml:name>
+          <maml:description>
+            <maml:para>Switch indicator to remove the Orphan GPT</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <!-- Parameter: RemoveOrphanGPT -->
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+        <maml:name>RemoveOrphanGPT</maml:name>
+        <maml:description>
+          <maml:para>Switch indicator to remove the Orphan GPT</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[SWITCH] parameter (true or false). If present the value becomes TRUE, and the Orphan GPT will be removed</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <!-- OutputType: String -->
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:examples>
+      <command:example>
+        <maml:title>----------  EXAMPLE 1  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Get-AdOrphanGPT</maml:para>
+        </maml:introduction>
+      </command:example>
+      <command:example>
+        <maml:title>----------  EXAMPLE 2  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet with parameters</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Get-AdOrphanGPT -RemoveOrphanGPT</maml:para>
+        </maml:introduction>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>[Eguibar Information Technology S.L. web site]</maml:linkText>
+        <maml:uri>(http://EguibarIT.eu)</maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <!-- Cmdlet: Get-AdOverlapSubnets -->
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>Get-AdOverlapSubnets</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>AdOverlapSubnets</command:noun>
+      <maml:description>
+        <maml:para>Find overlap Subnet objects.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>This CMDlet reads all AD Subnet objects, and will look for any IP Range overlap Active Directory Sites and Services uses this information to optimize traffic (replication, authentication, authorization, etc) by providing the most optimal domain controller on the network. IP Layer 3 of the ASI model should be configured as subnet object, and each of these objects has to be associated to an existing site.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <!-- Parameter set: __AllParameterSets -->
+      <command:syntaxItem>
+        <maml:name>Get-AdOverlapSubnets</maml:name>
+        <!-- Parameter: IncludeSite -->
+        <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+          <maml:name>IncludeSite</maml:name>
+          <maml:description>
+            <maml:para>Switch indicator. If present (TRUE), the Site information will be displayed.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <!-- Parameter: IncludeSite -->
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+        <maml:name>IncludeSite</maml:name>
+        <maml:description>
+          <maml:para>Switch indicator. If present (TRUE), the Site information will be displayed.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[SWITCH] (bool)</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <!-- OutputType: String -->
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:title>Copiright and Version</maml:title>
+      <maml:alert>
+        <maml:para>Version: 1.0</maml:para>
+        <maml:para>DateModified: 22/Aug/2019</maml:para>
+        <maml:para>LasModifiedBy: Vicente Rodriguez Eguibar</maml:para>
+        <maml:para>. vicente@eguibar.com</maml:para>
+        <maml:para>. Eguibar Information Technology S.L.</maml:para>
+        <maml:para>. http://www.eguibarit.com</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>----------  EXAMPLE 1  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet.</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Get-AdOverlapSubnets</maml:para>
+        </maml:introduction>
+      </command:example>
+      <command:example>
+        <maml:title>----------  EXAMPLE 2  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet including Site information</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Get-AdOverlapSubnets -IncludeSite</maml:para>
+        </maml:introduction>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>[Eguibar Information Technology S.L. web site]</maml:linkText>
+        <maml:uri>(http://EguibarIT.eu)</maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <!-- Cmdlet: Get-AdSemiPrivilegedUsersReport -->
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>Get-AdSemiPrivilegedUsersReport</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>AdSemiPrivilegedUsersReport</command:noun>
+      <maml:description>
+        <maml:para>Report on Semi-Privileged Users.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Provides a full report on existing Privileged and Semi-Privileged users. For this CMDlet to work properly, ALL privileged and SemiPrivileged accounts. must be located within the same OU. Failing to have all users located on the mentioned container will show an incorrect report.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <!-- Parameter set: __AllParameterSets -->
+      <command:syntaxItem>
+        <maml:name>Get-AdSemiPrivilegedUsersReport</maml:name>
+        <!-- Parameter: AdminUsersDN -->
+        <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+          <maml:name>AdminUsersDN</maml:name>
+          <maml:description>
+            <maml:para>Distinguished Name of the container where the Admin users are located.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: Path -->
+        <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+          <maml:name>Path</maml:name>
+          <maml:description>
+            <maml:para>Path where the HTML report will be saved.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <!-- Parameter: AdminUsersDN -->
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+        <maml:name>AdminUsersDN</maml:name>
+        <maml:description>
+          <maml:para>Distinguished Name of the container where the Admin users are located.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: Path -->
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+        <maml:name>Path</maml:name>
+        <maml:description>
+          <maml:para>Path where the HTML report will be saved.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] Admin User Account OU Distinguished Name. (ej. OU=Users,OU=Good,OU=Sites,DC=EguibarIT,DC=local).</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] Path where the HTML report will be saved. (ej. C:\Reports\MyReport.html).</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <!-- OutputType: File -->
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.IO.File</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:examples>
+      <command:example>
+        <maml:title>----------  EXAMPLE 1  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Get-AdSemiPrivilegedUsersReport "OU=Admin Users,OU=Admin,DC=EguibarIT,DC=local"</maml:para>
+        </maml:introduction>
+      </command:example>
+      <command:example>
+        <maml:title>----------  EXAMPLE 2  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet indicating report path</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Get-AdSemiPrivilegedUsersReport "OU=Admin Users,OU=Admin,DC=EguibarIT,DC=local" "C:\Reports\"</maml:para>
+        </maml:introduction>
+      </command:example>
+      <command:example>
+        <maml:title>----------  EXAMPLE 3  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet using named parameters</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Get-AdSemiPrivilegedUsersReport -AdminUsersDN "OU=Admin Users,OU=Admin,DC=EguibarIT,DC=local"</maml:para>
+        </maml:introduction>
+      </command:example>
+      <command:example>
+        <maml:title>----------  EXAMPLE 4  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet using named parameters including path for the report</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Get-AdSemiPrivilegedUsersReport -AdminUsersDN "OU=Admin Users,OU=Admin,DC=EguibarIT,DC=local" -Path "C:\Reports\"</maml:para>
+        </maml:introduction>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>[Eguibar Information Technology S.L. web site]</maml:linkText>
+        <maml:uri>(http://EguibarIT.eu)</maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <!-- Cmdlet: Get-AdStaleComputer -->
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>Get-AdStaleComputer</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>AdStaleComputer</command:noun>
+      <maml:description>
+        <maml:para>Find stale computer in domain.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>A stale computer is a computer which has not logon to the domain in a certain period of time. This time is calculated on the AD attribute LastLogonTimestamp. When this value is older than the value provided on the DaysOffset, the user is considered as stale. If the parameter DaysOffset (integer) is ommited,a default value of 45 will be used. The return object is a list of ComputerPrincipal Extended.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <!-- Parameter set: __AllParameterSets -->
+      <command:syntaxItem>
+        <maml:name>Get-AdStaleComputer</maml:name>
+        <!-- Parameter: DaysOffset -->
+        <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+          <maml:name>DaysOffset</maml:name>
+          <maml:description>
+            <maml:para>Days offset to search for the stale computer.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">int</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>0</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <!-- Parameter: DaysOffset -->
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+        <maml:name>DaysOffset</maml:name>
+        <maml:description>
+          <maml:para>Days offset to search for the stale computer.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">int</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>0</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[INT] Integer representing days offset to search for the stale computer.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <!-- OutputType: ComputerPrincipalEx -->
+      <command:returnValue>
+        <dev:type>
+          <maml:name>EguibarIT.Housekeeping.ExtPrincipal.ComputerPrincipalEx</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:examples>
+      <command:example>
+        <maml:title>----------  EXAMPLE 1  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Get-AdStaleComputer 30</maml:para>
+        </maml:introduction>
+      </command:example>
+      <command:example>
+        <maml:title>----------  EXAMPLE 2  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet using named parameters</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Get-AdStaleComputer -DaysOffset 30</maml:para>
+        </maml:introduction>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>[Eguibar Information Technology S.L. web site]</maml:linkText>
+        <maml:uri>(http://EguibarIT.eu)</maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <!-- Cmdlet: Get-AdStaleUser -->
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>Get-AdStaleUser</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>AdStaleUser</command:noun>
+      <maml:description>
+        <maml:para>Find stale users in domain.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>A stale user is a user which has not logon to the domain in a certain period of time. This time is calculated on the AD attribute LastLogonTimestamp. When this value is older than the value provided on the DaysOffset, the user is considered as stale. If the parameter DaysOffset (integer) is ommited,a default value of 45 will be used. The return object is a list of UserPrincipal Extended.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <!-- Parameter set: __AllParameterSets -->
+      <command:syntaxItem>
+        <maml:name>Get-AdStaleUser</maml:name>
+        <!-- Parameter: DaysOffset -->
+        <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+          <maml:name>DaysOffset</maml:name>
+          <maml:description>
+            <maml:para>Days offset to search for the stale user.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">int</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>0</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <!-- Parameter: DaysOffset -->
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+        <maml:name>DaysOffset</maml:name>
+        <maml:description>
+          <maml:para>Days offset to search for the stale user.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">int</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>0</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[INT] Integer representing days offset to search for the stale user.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <!-- OutputType: UserPrincipalEx -->
+      <command:returnValue>
+        <dev:type>
+          <maml:name>EguibarIT.Housekeeping.ExtPrincipal.UserPrincipalEx</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:examples>
+      <command:example>
+        <maml:title>----------  EXAMPLE 1  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Get-AdStaleUser 30</maml:para>
+        </maml:introduction>
+      </command:example>
+      <command:example>
+        <maml:title>----------  EXAMPLE 2  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet using named parameters</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Get-AdStaleUser -DaysOffset 30</maml:para>
+        </maml:introduction>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>[Eguibar Information Technology S.L. web site]</maml:linkText>
+        <maml:uri>(http://EguibarIT.eu)</maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <!-- Cmdlet: Get-AdUnLinkedGPO -->
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>Get-AdUnLinkedGPO</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>AdUnLinkedGPO</command:noun>
+      <maml:description>
+        <maml:para>Find unlinked GPOs</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Find unlinked GPO in the domain. Remove those if switch is present</maml:para>
+    </maml:description>
+    <command:syntax>
+      <!-- Parameter set: __AllParameterSets -->
+      <command:syntaxItem>
+        <maml:name>Get-AdUnLinkedGPO</maml:name>
+        <!-- Parameter: RemoveUnLinkedGpo -->
+        <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+          <maml:name>RemoveUnLinkedGpo</maml:name>
+          <maml:description>
+            <maml:para>Switch indicator to remove the UnLinked GPOs</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <!-- Parameter: RemoveUnLinkedGpo -->
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+        <maml:name>RemoveUnLinkedGpo</maml:name>
+        <maml:description>
+          <maml:para>Switch indicator to remove the UnLinked GPOs</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[SWITCH] parameter (true or false). If present the value becomes TRUE, and the UnLinked GPOs will be removed</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <!-- OutputType: String -->
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:examples>
+      <command:example>
+        <maml:title>----------  EXAMPLE 1  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Get-AdUnLinkedGPO</maml:para>
+        </maml:introduction>
+      </command:example>
+      <command:example>
+        <maml:title>----------  EXAMPLE 2  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet using named parameters</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Get-AdUnLinkedGPO -RemoveUnLinkedGpo</maml:para>
+        </maml:introduction>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>[Eguibar Information Technology S.L. web site]</maml:linkText>
+        <maml:uri>(http://EguibarIT.eu)</maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <!-- Cmdlet: Set-AllGroupAdminCount -->
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>Set-AllGroupAdminCount</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>AllGroupAdminCount</command:noun>
+      <maml:description>
+        <maml:para>Clears adminCount attribute, and enables inherited security on all the passed group objects.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Finds all group objects (From specific OU and childs, or All Domain), and clears adminCount attribute, enabling inherited security on the passed group objectlist.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <!-- Parameter set: AllGroups -->
+      <command:syntaxItem>
+        <maml:name>Set-AllGroupAdminCount</maml:name>
+        <!-- Parameter: All -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+          <maml:name>All</maml:name>
+          <maml:description>
+            <maml:para>If present, all groups in the domain should be processed</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <!-- Parameter set: SubTree -->
+      <command:syntaxItem>
+        <maml:name>Set-AllGroupAdminCount</maml:name>
+        <!-- Parameter: SubTree -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+          <maml:name>SubTree</maml:name>
+          <maml:description>
+            <maml:para>If present, only groups of a sub-tree OU should be processed.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <!-- Parameter: SearchRootDN -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="2">
+          <maml:name>SearchRootDN</maml:name>
+          <maml:description>
+            <maml:para>Distinguished Name where the search starts.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <!-- Parameter: All -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+        <maml:name>All</maml:name>
+        <maml:description>
+          <maml:para>If present, all groups in the domain should be processed</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <!-- Parameter: SubTree -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+        <maml:name>SubTree</maml:name>
+        <maml:description>
+          <maml:para>If present, only groups of a sub-tree OU should be processed.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <!-- Parameter: SearchRootDN -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="2">
+        <maml:name>SearchRootDN</maml:name>
+        <maml:description>
+          <maml:para>Distinguished Name where the search starts.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[SWITCH] Indicating if all groups in the domain should be processed.</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[SWITCH] Indicating only a sub-tree OU should be processed.</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] Representing the Distinguished Name where the search starts (ej. OU=Sites,DC=EguibarIT,DC=local).</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <!-- OutputType: Int32 -->
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:examples>
+      <command:example>
+        <maml:title>----------  EXAMPLE 1  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet using named parameters finding all groups with adminCount = 1 in the domain</maml:para>
+          <maml:para>Set-AllGroupAdminCount -all</maml:para>
+        </maml:introduction>
+      </command:example>
+      <command:example>
+        <maml:title>----------  EXAMPLE 2  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet using named parameters finding all groups with adminCount = 1 in specific OU</maml:para>
+          <maml:para>Set-AllGroupAdminCount -SubTree -SearchRootDN "OU=Admin Accounts,OU=Admin,DC=EguibarIT,DC=local"</maml:para>
+        </maml:introduction>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>[Eguibar Information Technology S.L. web site]</maml:linkText>
+        <maml:uri>(http://EguibarIT.eu)</maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <!-- Cmdlet: Set-AllUserAdminCount -->
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>Set-AllUserAdminCount</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>AllUserAdminCount</command:noun>
+      <maml:description>
+        <maml:para>Clears adminCount attribute, and enables inherited security on all the passed user objects.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Finds all user objects (From specific OU and childs, or All Domain), and clears adminCount attribute, and enables inherited security on the passed user objectlist.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <!-- Parameter set: AllUsers -->
+      <command:syntaxItem>
+        <maml:name>Set-AllUserAdminCount</maml:name>
+        <!-- Parameter: All -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+          <maml:name>All</maml:name>
+          <maml:description>
+            <maml:para>If present, all users in the domain should be processed</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <!-- Parameter set: SubTree -->
+      <command:syntaxItem>
+        <maml:name>Set-AllUserAdminCount</maml:name>
+        <!-- Parameter: SubTree -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+          <maml:name>SubTree</maml:name>
+          <maml:description>
+            <maml:para>If present, only users of a sub-tree OU should be processed.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <!-- Parameter: SearchRootDN -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="2">
+          <maml:name>SearchRootDN</maml:name>
+          <maml:description>
+            <maml:para>Distinguished Name where the search starts.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <!-- Parameter: All -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+        <maml:name>All</maml:name>
+        <maml:description>
+          <maml:para>If present, all users in the domain should be processed</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <!-- Parameter: SubTree -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+        <maml:name>SubTree</maml:name>
+        <maml:description>
+          <maml:para>If present, only users of a sub-tree OU should be processed.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <!-- Parameter: SearchRootDN -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="2">
+        <maml:name>SearchRootDN</maml:name>
+        <maml:description>
+          <maml:para>Distinguished Name where the search starts.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[SWITCH] (bool) Indicating if all users in the domain should be processed.</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[SWITCH] Indicating only a sub-tree OU should be processed.</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] Representing the Distinguished Name where the search starts (ej. OU=Sites,DC=EguibarIT,DC=local).</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <!-- OutputType: Int32 -->
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:examples>
+      <command:example>
+        <maml:title>----------  EXAMPLE 1  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet using named parameters finding all users with adminCount = 1 in the domain</maml:para>
+          <maml:para>- -</maml:para>
+          <maml:para>Set-AllUserAdminCount -all</maml:para>
+        </maml:introduction>
+      </command:example>
+      <command:example>
+        <maml:title>----------  EXAMPLE 2  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet using named parameters finding all users with adminCount = 1 in specific OU</maml:para>
+          <maml:para>- -</maml:para>
+          <maml:para>Set-AllUserAdminCount -SubTree -SearchRootDN "OU=Admin Accounts,OU=Admin,DC=EguibarIT,DC=local"</maml:para>
+        </maml:introduction>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>[Eguibar Information Technology S.L. web site]</maml:linkText>
+        <maml:uri>(http://EguibarIT.eu)</maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <!-- Cmdlet: Set-NonPrivilegedGroupHousekeeping -->
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>Set-NonPrivilegedGroupHousekeeping</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>NonPrivilegedGroupHousekeeping</command:noun>
+      <maml:description>
+        <maml:para>Function for consistency check on semi-privileged accounts</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>For each of the user accounts stored within the USERS container of Admin Area, all groups will be enumerated and evaluated.In case that any of the groups the user belongs to are not part of Admin Area and/or BuiltIn container, will be removed from the user.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <!-- Parameter set: __AllParameterSets -->
+      <command:syntaxItem>
+        <maml:name>Set-NonPrivilegedGroupHousekeeping</maml:name>
+        <!-- Parameter: AdminUsersDN -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+          <maml:name>AdminUsersDN</maml:name>
+          <maml:description>
+            <maml:para>Distinguished Name of the container where the users are located.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <!-- Parameter: AdminUsersDN -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+        <maml:name>AdminUsersDN</maml:name>
+        <maml:description>
+          <maml:para>Distinguished Name of the container where the users are located.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] Admin User Account OU Distinguished Name. (ej. OU=Users,OU=Admin,DC=EguibarIT,DC=local).</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <!-- OutputType: Int32 -->
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:examples>
+      <command:example>
+        <maml:title>----------  EXAMPLE 1  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Set-NonPrivilegedGroupHousekeeping "OU=Users,OU=Admin,DC=EguibarIT,DC=local"</maml:para>
+        </maml:introduction>
+      </command:example>
+      <command:example>
+        <maml:title>----------  EXAMPLE 2  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet using named parameters</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Set-NonPrivilegedGroupHousekeeping -AdminUsersDN "OU=Users,OU=Admin,DC=EguibarIT,DC=local"</maml:para>
+        </maml:introduction>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>[Eguibar Information Technology S.L. web site]</maml:linkText>
+        <maml:uri>(http://EguibarIT.eu)</maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <!-- Cmdlet: Set-PrivilegedComputerHousekeeping -->
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>Set-PrivilegedComputerHousekeeping</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>PrivilegedComputerHousekeeping</command:noun>
+      <maml:description>
+        <maml:para>Function for Privileged Computers housekeeping</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>PAWs and Infrastructure Services must be managed by Tier0 administrators and services. Each typemust belong to a certain group(SL_PAWS or SL_InfrastructureServices) in order to be mantained.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <!-- Parameter set: __AllParameterSets -->
+      <command:syntaxItem>
+        <maml:name>Set-PrivilegedComputerHousekeeping</maml:name>
+        <!-- Parameter: SearchRootDN -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+          <maml:name>SearchRootDN</maml:name>
+          <maml:description>
+            <maml:para>Distinguished Name of the container where the computers are located.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <!-- Parameter: SearchRootDN -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+        <maml:name>SearchRootDN</maml:name>
+        <maml:description>
+          <maml:para>Distinguished Name of the container where the computers are located.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] Admin OU Distinguished Name. (ej. OU=Users,OU=Good,OU=Sites,DC=EguibarIT,DC=local).</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <!-- OutputType: Int32 -->
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:examples>
+      <command:example>
+        <maml:title>----------  EXAMPLE 1  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Set-PrivilegedComputerHousekeeping "OU=Admin,DC=EguibarIT,DC=local"</maml:para>
+        </maml:introduction>
+      </command:example>
+      <command:example>
+        <maml:title>----------  EXAMPLE 2  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet using named parameters</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Set-PrivilegedComputerHousekeeping -SearchRootDN "OU=Admin,DC=EguibarIT,DC=local"</maml:para>
+        </maml:introduction>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>[Eguibar Information Technology S.L. web site]</maml:linkText>
+        <maml:uri>(http://EguibarIT.eu)</maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <!-- Cmdlet: Set-PrivilegedGroupsHousekeeping -->
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>Set-PrivilegedGroupsHousekeeping</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>PrivilegedGroupsHousekeeping</command:noun>
+      <maml:description>
+        <maml:para>Function for Privileged Groups housekeeping</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Ensure that any group stored on Admin OU (Tier0) contains only authorized users. An Authorized user is a user created and mantained by the Tier0 Admins, and is usually identified by the SamAccountName suffix of either _T0, or _T1 or _T2. Any non authorized user will be inmediatelly revoked from these groups.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <!-- Parameter set: __AllParameterSets -->
+      <command:syntaxItem>
+        <maml:name>Set-PrivilegedGroupsHousekeeping</maml:name>
+        <!-- Parameter: AdminUsersDN -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+          <maml:name>AdminUsersDN</maml:name>
+          <maml:description>
+            <maml:para>Distinguished Name of the container where the users are located.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: ExcludeList -->
+        <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+          <maml:name>ExcludeList</maml:name>
+          <maml:description>
+            <maml:para>Userlist to be excluded from this process.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">List`1</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Collections.Generic.List`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <!-- Parameter: AdminUsersDN -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+        <maml:name>AdminUsersDN</maml:name>
+        <maml:description>
+          <maml:para>Distinguished Name of the container where the users are located.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: ExcludeList -->
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+        <maml:name>ExcludeList</maml:name>
+        <maml:description>
+          <maml:para>Userlist to be excluded from this process.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">List`1</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Collections.Generic.List`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] Admin Users OU Distinguished Name. (ej. OU=Users,OU=Good,OU=Sites,DC=EguibarIT,DC=local).</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.Collections.Generic.List`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>List[STRING] user list array</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <!-- OutputType: Int32 -->
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:examples>
+      <command:example>
+        <maml:title>----------  EXAMPLE 1  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet.</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Set-PrivilegedGroupsHousekeeping "OU=Groups,OU=Admin,DC=EguibarIT,DC=local"</maml:para>
+        </maml:introduction>
+      </command:example>
+      <command:example>
+        <maml:title>----------  EXAMPLE 2  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet using named parameters.</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Set-PrivilegedGroupsHousekeeping -AdminUsersDN "OU=Groups,OU=Admin,DC=EguibarIT,DC=local"</maml:para>
+        </maml:introduction>
+      </command:example>
+      <command:example>
+        <maml:title>----------  EXAMPLE 3  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet using named parameters and provides a exclusion list.</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Set-PrivilegedGroupsHousekeeping -AdminUsersDN "OU=Groups,OU=Admin,DC=EguibarIT,DC=local" -ExcludeList "dvader", "hsolo"</maml:para>
+        </maml:introduction>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>[Eguibar Information Technology S.L. web site]</maml:linkText>
+        <maml:uri>(http://EguibarIT.eu)</maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <!-- Cmdlet: Set-PrivilegedUsersHousekeeping -->
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>Set-PrivilegedUsersHousekeeping</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>PrivilegedUsersHousekeeping</command:noun>
+      <maml:description>
+        <maml:para>Function for Privileged Users housekeeping</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>For each of the user accounts stored within the USERS container, make it part of the corresponding admin tier group. For example, if the user account is a Tier2 account(_T2), the user must belong to SG_Tier2Admins group.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <!-- Parameter set: __AllParameterSets -->
+      <command:syntaxItem>
+        <maml:name>Set-PrivilegedUsersHousekeeping</maml:name>
+        <!-- Parameter: AdminUsersDN -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+          <maml:name>AdminUsersDN</maml:name>
+          <maml:description>
+            <maml:para>Distinguished Name of the container where the Admin users are located.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: DisableNonStandardUsers -->
+        <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+          <maml:name>DisableNonStandardUsers</maml:name>
+          <maml:description>
+            <maml:para>Switch indicator to disable all Non-Standard users</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <!-- Parameter: AdminUsersDN -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+        <maml:name>AdminUsersDN</maml:name>
+        <maml:description>
+          <maml:para>Distinguished Name of the container where the Admin users are located.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: DisableNonStandardUsers -->
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+        <maml:name>DisableNonStandardUsers</maml:name>
+        <maml:description>
+          <maml:para>Switch indicator to disable all Non-Standard users</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] Admin User Account OU Distinguished Name. (ej. OU=Users,OU=Good,OU=Sites,DC=EguibarIT,DC=local).</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>SWITCH parameter (true or false). If present the value becomes TRUE, and</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <!-- OutputType: Int32 -->
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:examples>
+      <command:example>
+        <maml:title>----------  EXAMPLE 1  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Set-PrivilegedUsersHousekeeping "OU=Users,OU=Admin,DC=EguibarIT,DC=local"</maml:para>
+        </maml:introduction>
+      </command:example>
+      <command:example>
+        <maml:title>----------  EXAMPLE 2  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet using named parameters</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Set-PrivilegedUsersHousekeeping -AdminUsersDN "OU=Users,OU=Admin,DC=EguibarIT,DC=local"</maml:para>
+        </maml:introduction>
+      </command:example>
+      <command:example>
+        <maml:title>----------  EXAMPLE 3  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet using named parameters and removing Non-Standard users.</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Set-PrivilegedUsersHousekeeping -AdminUsersDN "OU=Users,OU=Admin,DC=EguibarIT,DC=local" -DisableNonStandardUsers</maml:para>
+        </maml:introduction>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>[Eguibar Information Technology S.L. web site]</maml:linkText>
+        <maml:uri>(http://EguibarIT.eu)</maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <!-- Cmdlet: Get-RandomPassword -->
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>Get-RandomPassword</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>RandomPassword</command:noun>
+      <maml:description>
+        <maml:para>Generate random password</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Generate random password, with defined length and complexity.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <!-- Parameter set: __AllParameterSets -->
+      <command:syntaxItem>
+        <maml:name>Get-RandomPassword</maml:name>
+        <!-- Parameter: PasswordLength -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+          <maml:name>PasswordLength</maml:name>
+          <maml:description>
+            <maml:para>Length of the password to be generated.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">int</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>0</dev:defaultValue>
+        </command:parameter>
+        <!-- Parameter: PasswordComplexity -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+          <maml:name>PasswordComplexity</maml:name>
+          <maml:description>
+            <maml:para>Password complexity. Low use lowercase characters. Medium uses aditional upercase characters. High uses additional number characters. VeryHigh uses additional special characters.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <!-- Parameter: PasswordLength -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+        <maml:name>PasswordLength</maml:name>
+        <maml:description>
+          <maml:para>Length of the password to be generated.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">int</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>0</dev:defaultValue>
+      </command:parameter>
+      <!-- Parameter: PasswordComplexity -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+        <maml:name>PasswordComplexity</maml:name>
+        <maml:description>
+          <maml:para>Password complexity. Low use lowercase characters. Medium uses aditional upercase characters. High uses additional number characters. VeryHigh uses additional special characters.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[INT] Length of the password to be generated.</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[ValidateSet] Low, Medium, High or VeryHigh</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <!-- OutputType: String -->
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:examples>
+      <command:example>
+        <maml:title>----------  EXAMPLE 1  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet using named parameters</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Get-RandomPassword -PasswordLength 14 -PasswordComplexity VeryHigh</maml:para>
+        </maml:introduction>
+      </command:example>
+      <command:example>
+        <maml:title>----------  EXAMPLE 2  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Get-RandomPassword 14 VeryHigh</maml:para>
+        </maml:introduction>
+      </command:example>
+      <command:example>
+        <maml:title>----------  EXAMPLE 3  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>Create a new 10 Character Password of Uppercase/Lowercase/Numbers and store as a Secure.String in Variable called $MYPASSWORD</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>$MYPASSWORD = CONVERTTO-SECURESTRING (Get-RandomPassword -Length 10 -Complexity High) -asplaintext -force</maml:para>
+        </maml:introduction>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>[Eguibar Information Technology S.L. web site]</maml:linkText>
+        <maml:uri>(http://EguibarIT.eu)</maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <!-- Cmdlet: Set-ScheduleAllGroupAdminCount -->
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>Set-ScheduleAllGroupAdminCount</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>ScheduleAllGroupAdminCount</command:noun>
+      <maml:description>
+        <maml:para>Create a new Scheduled Tasks which executes Set-AllGroupAdminCount</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Create a new Scheduled Tasks, which will trigger 12 times per day. The Action configured is a PowerShell function from the Housekeeping module: Set-AllGroupAdminCount.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <!-- Parameter set: __AllParameterSets -->
+      <command:syntaxItem>
+        <maml:name>Set-ScheduleAllGroupAdminCount</maml:name>
+        <!-- Parameter: ServiceAccount -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+          <maml:name>ServiceAccount</maml:name>
+          <maml:description>
+            <maml:para>SamAccountName of the service account (or gMSA) used to execute the scheduled task.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <!-- Parameter: ServiceAccount -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+        <maml:name>ServiceAccount</maml:name>
+        <maml:description>
+          <maml:para>SamAccountName of the service account (or gMSA) used to execute the scheduled task.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[String] SamAccountName of the group managed service account used to execute the scheduled task.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <!-- OutputType: Int32 -->
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:examples>
+      <command:example>
+        <maml:title>----------  EXAMPLE 1  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet using named parameters</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Set-ScheduleAllGroupAdminCount -ServiceAccount "SA_R2D2"</maml:para>
+        </maml:introduction>
+      </command:example>
+      <command:example>
+        <maml:title>----------  EXAMPLE 2  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Set-ScheduleAllGroupAdminCount "SA_R2D2"</maml:para>
+        </maml:introduction>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>[Eguibar Information Technology S.L. web site]</maml:linkText>
+        <maml:uri>(http://EguibarIT.eu)</maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <!-- Cmdlet: Set-ScheduleAllUserAdminCount -->
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>Set-ScheduleAllUserAdminCount</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>ScheduleAllUserAdminCount</command:noun>
+      <maml:description>
+        <maml:para>Create a new Scheduled Tasks which executes Set-AllUserAdminCount</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Create a new Scheduled Tasks, which will trigger 12 times per day. The Action configured is a PowerShell function from the Housekeeping module: Set-AllUserAdminCount.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <!-- Parameter set: __AllParameterSets -->
+      <command:syntaxItem>
+        <maml:name>Set-ScheduleAllUserAdminCount</maml:name>
+        <!-- Parameter: ServiceAccount -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+          <maml:name>ServiceAccount</maml:name>
+          <maml:description>
+            <maml:para>SamAccountName of the service account (or gMSA) used to execute the scheduled task.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <!-- Parameter: ServiceAccount -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+        <maml:name>ServiceAccount</maml:name>
+        <maml:description>
+          <maml:para>SamAccountName of the service account (or gMSA) used to execute the scheduled task.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[String] SamAccountName of the group managed service account used to execute the scheduled task.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <!-- OutputType: Int32 -->
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:examples>
+      <command:example>
+        <maml:title>----------  EXAMPLE 1  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet using named parameters</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Set-ScheduleAllUserAdminCount -ServiceAccount "SA_R2D2"</maml:para>
+        </maml:introduction>
+      </command:example>
+      <command:example>
+        <maml:title>----------  EXAMPLE 2  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Set-ScheduleAllUserAdminCount "SA_R2D2"</maml:para>
+        </maml:introduction>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>[Eguibar Information Technology S.L. web site]</maml:linkText>
+        <maml:uri>(http://EguibarIT.eu)</maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <!-- Cmdlet: Set-ScheduleEventTask -->
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>Set-ScheduleEventTask</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>ScheduleEventTask</command:noun>
+    </command:details>
+    <command:syntax>
+      <!-- Parameter set: __AllParameterSets -->
+      <command:syntaxItem>
+        <maml:name>Set-ScheduleEventTask</maml:name>
+        <!-- Parameter: ServiceAccount -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+          <maml:name>ServiceAccount</maml:name>
+          <maml:description>
+            <maml:para>SamAccountName of the service account (or gMSA) used to execute the scheduled task.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: PsArguments -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+          <maml:name>PsArguments</maml:name>
+          <maml:description>
+            <maml:para>Arguments for PowerShell to execute.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: EventID -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="2">
+          <maml:name>EventID</maml:name>
+          <maml:description>
+            <maml:para>EventID that will trigger this task</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: Logname -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="3">
+          <maml:name>Logname</maml:name>
+          <maml:description>
+            <maml:para>Name of the log file</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <!-- Parameter: ServiceAccount -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+        <maml:name>ServiceAccount</maml:name>
+        <maml:description>
+          <maml:para>SamAccountName of the service account (or gMSA) used to execute the scheduled task.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: PsArguments -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+        <maml:name>PsArguments</maml:name>
+        <maml:description>
+          <maml:para>Arguments for PowerShell to execute.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: EventID -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="2">
+        <maml:name>EventID</maml:name>
+        <maml:description>
+          <maml:para>EventID that will trigger this task</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: Logname -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="3">
+        <maml:name>Logname</maml:name>
+        <maml:description>
+          <maml:para>Name of the log file</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] SamAccountName of the group managed service account used to execute the scheduled task.</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] PsArguments provides the arguments for PowerShell. A command or a PS! file can be parsed</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] EventID that will trigger this task</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] Logname is the name of the log file where the EventID is going to be generated.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <!-- OutputType: Int32 -->
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+  </command:command>
+  <!-- Cmdlet: Set-ScheduleNonPrivilegedGroups -->
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>Set-ScheduleNonPrivilegedGroups</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>ScheduleNonPrivilegedGroups</command:noun>
+      <maml:description>
+        <maml:para>Create a new Scheduled Tasks which executes Set-NonPrivilegedGroupHousekeeping</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Create a new Scheduled Tasks, which will trigger 12 times per day. The Action configured is a PowerShell function from the Housekeeping module: Set-NonPrivilegedGroupHousekeeping</maml:para>
+    </maml:description>
+    <command:syntax>
+      <!-- Parameter set: __AllParameterSets -->
+      <command:syntaxItem>
+        <maml:name>Set-ScheduleNonPrivilegedGroups</maml:name>
+        <!-- Parameter: ServiceAccount -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+          <maml:name>ServiceAccount</maml:name>
+          <maml:description>
+            <maml:para>SamAccountName of the service account (or gMSA) used to execute the scheduled task.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: AdminUsersDN -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+          <maml:name>AdminUsersDN</maml:name>
+          <maml:description>
+            <maml:para>Distinguished Name of the container where the Admin users are located.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <!-- Parameter: ServiceAccount -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+        <maml:name>ServiceAccount</maml:name>
+        <maml:description>
+          <maml:para>SamAccountName of the service account (or gMSA) used to execute the scheduled task.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: AdminUsersDN -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+        <maml:name>AdminUsersDN</maml:name>
+        <maml:description>
+          <maml:para>Distinguished Name of the container where the Admin users are located.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[String] SamAccountName of the group managed service account used to execute the scheduled task.</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] Admin User Account OU Distinguished Name. (ej. OU=Users,OU=Good,OU=Sites,DC=EguibarIT,DC=local).</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <!-- OutputType: Int32 -->
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:examples>
+      <command:example>
+        <maml:title>----------  EXAMPLE 1  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet using named parameters</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Set-ScheduleNonPrivilegedGroups -ServiceAccount "SA_R2D2" -AdminUsersDN "OU=Users,OU=Admin,DC=EguibarIT,DC=local"</maml:para>
+        </maml:introduction>
+      </command:example>
+      <command:example>
+        <maml:title>----------  EXAMPLE 2  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Set-ScheduleNonPrivilegedGroups "SA_R2D2" "OU=Users,OU=Admin,DC=EguibarIT,DC=local"</maml:para>
+        </maml:introduction>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>[Eguibar Information Technology S.L. web site]</maml:linkText>
+        <maml:uri>(http://EguibarIT.eu)</maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <!-- Cmdlet: Set-SchedulePrivilegedComputers -->
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>Set-SchedulePrivilegedComputers</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>SchedulePrivilegedComputers</command:noun>
+      <maml:description>
+        <maml:para>Create a new Scheduled Tasks which executes Set-PrivilegedComputerHousekeeping</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Create a new Scheduled Tasks, which will trigger 12 times per day. The Action configured is a PowerShell function from the Housekeeping module: Set-PrivilegedComputerHousekeeping</maml:para>
+    </maml:description>
+    <command:syntax>
+      <!-- Parameter set: __AllParameterSets -->
+      <command:syntaxItem>
+        <maml:name>Set-SchedulePrivilegedComputers</maml:name>
+        <!-- Parameter: ServiceAccount -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+          <maml:name>ServiceAccount</maml:name>
+          <maml:description>
+            <maml:para>SamAccountName of the service account (or gMSA) used to execute the scheduled task.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: SearchRootDN -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+          <maml:name>SearchRootDN</maml:name>
+          <maml:description>
+            <maml:para>Distinguished Name of the container where the computers are located.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <!-- Parameter: ServiceAccount -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+        <maml:name>ServiceAccount</maml:name>
+        <maml:description>
+          <maml:para>SamAccountName of the service account (or gMSA) used to execute the scheduled task.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: SearchRootDN -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+        <maml:name>SearchRootDN</maml:name>
+        <maml:description>
+          <maml:para>Distinguished Name of the container where the computers are located.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[String] SamAccountName of the group managed service account used to execute the scheduled task.</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] Admin OU Distinguished Name. (ej. OU=Users,OU=Good,OU=Sites,DC=EguibarIT,DC=local).</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <!-- OutputType: Int32 -->
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:examples>
+      <command:example>
+        <maml:title>----------  EXAMPLE 1  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet using named parameters</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Set-SchedulePrivilegedComputers -ServiceAccount "SA_R2D2" -SearchRootDN "OU=Admin,DC=EguibarIT,DC=local"</maml:para>
+        </maml:introduction>
+      </command:example>
+      <command:example>
+        <maml:title>----------  EXAMPLE 2  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Set-SchedulePrivilegedComputers "SA_R2D2" "OU=Admin,DC=EguibarIT,DC=local"</maml:para>
+        </maml:introduction>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>[Eguibar Information Technology S.L. web site]</maml:linkText>
+        <maml:uri>(http://EguibarIT.eu)</maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <!-- Cmdlet: Set-SchedulePrivilegedGroups -->
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>Set-SchedulePrivilegedGroups</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>SchedulePrivilegedGroups</command:noun>
+      <maml:description>
+        <maml:para>Create a new Scheduled Tasks which executes Set-PrivilegedGroupsHousekeeping</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Create a new Scheduled Tasks, which will trigger 12 times per day. The Action configured is a PowerShell function from the Housekeeping module: Set-PrivilegedGroupsHousekeeping</maml:para>
+    </maml:description>
+    <command:syntax>
+      <!-- Parameter set: __AllParameterSets -->
+      <command:syntaxItem>
+        <maml:name>Set-SchedulePrivilegedGroups</maml:name>
+        <!-- Parameter: ServiceAccount -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+          <maml:name>ServiceAccount</maml:name>
+          <maml:description>
+            <maml:para>SamAccountName of the service account (or gMSA) used to execute the scheduled task.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: AdminUsersDN -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+          <maml:name>AdminUsersDN</maml:name>
+          <maml:description>
+            <maml:para>Distinguished Name of the container where the users are located.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: ExcludeList -->
+        <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="2">
+          <maml:name>ExcludeList</maml:name>
+          <maml:description>
+            <maml:para>Userlist to be excluded from this process.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">List`1</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Collections.Generic.List`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <!-- Parameter: ServiceAccount -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+        <maml:name>ServiceAccount</maml:name>
+        <maml:description>
+          <maml:para>SamAccountName of the service account (or gMSA) used to execute the scheduled task.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: AdminUsersDN -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+        <maml:name>AdminUsersDN</maml:name>
+        <maml:description>
+          <maml:para>Distinguished Name of the container where the users are located.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: ExcludeList -->
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="2">
+        <maml:name>ExcludeList</maml:name>
+        <maml:description>
+          <maml:para>Userlist to be excluded from this process.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">List`1</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Collections.Generic.List`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[String] SamAccountName of the group managed service account used to execute the scheduled task.</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] Admin Users OU Distinguished Name. (ej. OU=Users,OU=Good,OU=Sites,DC=EguibarIT,DC=local).</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.Collections.Generic.List`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>List[STRING] user list array</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <!-- OutputType: Int32 -->
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:examples>
+      <command:example>
+        <maml:title>----------  EXAMPLE 1  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet using named parameters.</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Set-SchedulePrivilegedGroups -ServiceAccount "SA_R2D2" -AdminUsersDN "OU=Users,OU=Admin,DC=EguibarIT,DC=local" -ExcludeList "Administrator", "TheGood"</maml:para>
+        </maml:introduction>
+      </command:example>
+      <command:example>
+        <maml:title>----------  EXAMPLE 2  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet.</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Set-SchedulePrivilegedGroups "SA_R2D2" "OU=Users,OU=Admin,DC=EguibarIT,DC=local"</maml:para>
+        </maml:introduction>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>[Eguibar Information Technology S.L. web site]</maml:linkText>
+        <maml:uri>(http://EguibarIT.eu)</maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <!-- Cmdlet: Set-SchedulePrivilegedUsers -->
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>Set-SchedulePrivilegedUsers</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>SchedulePrivilegedUsers</command:noun>
+      <maml:description>
+        <maml:para>Create a new Scheduled Tasks which executes Set-PrivilegedUsersHousekeeping</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Create a new Scheduled Tasks, which will trigger 12 times per day. The Action configured is a PowerShell function from the Housekeeping module: Set-PrivilegedUsersHousekeeping</maml:para>
+    </maml:description>
+    <command:syntax>
+      <!-- Parameter set: __AllParameterSets -->
+      <command:syntaxItem>
+        <maml:name>Set-SchedulePrivilegedUsers</maml:name>
+        <!-- Parameter: ServiceAccount -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+          <maml:name>ServiceAccount</maml:name>
+          <maml:description>
+            <maml:para>SamAccountName of the service account (or gMSA) used to execute the scheduled task.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: AdminUsersDN -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+          <maml:name>AdminUsersDN</maml:name>
+          <maml:description>
+            <maml:para>Distinguished Name of the container where the Admin users are located.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <!-- Parameter: ServiceAccount -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+        <maml:name>ServiceAccount</maml:name>
+        <maml:description>
+          <maml:para>SamAccountName of the service account (or gMSA) used to execute the scheduled task.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: AdminUsersDN -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+        <maml:name>AdminUsersDN</maml:name>
+        <maml:description>
+          <maml:para>Distinguished Name of the container where the Admin users are located.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[String] SamAccountName of the group managed service account used to execute the scheduled task.</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] Admin User Account OU Distinguished Name. (ej. OU=Users,OU=Good,OU=Sites,DC=EguibarIT,DC=local).</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <!-- OutputType: Int32 -->
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:examples>
+      <command:example>
+        <maml:title>----------  EXAMPLE 1  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet using named parameters</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Set-SchedulePrivilegedUsers -ServiceAccount "SA_R2D2" -AdminUsersDN "OU=Users,OU=Admin,DC=EguibarIT,DC=local"</maml:para>
+        </maml:introduction>
+      </command:example>
+      <command:example>
+        <maml:title>----------  EXAMPLE 2  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Set-SchedulePrivilegedUsers "SA_R2D2" "OU=Users,OU=Admin,DC=EguibarIT,DC=local"</maml:para>
+        </maml:introduction>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>[Eguibar Information Technology S.L. web site]</maml:linkText>
+        <maml:uri>(http://EguibarIT.eu)</maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <!-- Cmdlet: Set-ScheduleSemiPrivilegedKeyPair -->
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>Set-ScheduleSemiPrivilegedKeyPair</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>ScheduleSemiPrivilegedKeyPair</command:noun>
+      <maml:description>
+        <maml:para>Create a new Scheduled Tasks which executes Set-SemiPrivilegedKeyPairCheck</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Create a new Scheduled Tasks, which will trigger 12 times per day. The Action configured is a PowerShell function from the Housekeeping module: Set-SemiPrivilegedKeyPairCheck</maml:para>
+    </maml:description>
+    <command:syntax>
+      <!-- Parameter set: __AllParameterSets -->
+      <command:syntaxItem>
+        <maml:name>Set-ScheduleSemiPrivilegedKeyPair</maml:name>
+        <!-- Parameter: ServiceAccount -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+          <maml:name>ServiceAccount</maml:name>
+          <maml:description>
+            <maml:para>SamAccountName of the service account (or gMSA) used to execute the scheduled task.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: AdminUsersDN -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+          <maml:name>AdminUsersDN</maml:name>
+          <maml:description>
+            <maml:para>Distinguished Name of the container where the users are located.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: ExcludeList -->
+        <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="2">
+          <maml:name>ExcludeList</maml:name>
+          <maml:description>
+            <maml:para>Userlist to be excluded from this process.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">List`1</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Collections.Generic.List`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <!-- Parameter: ServiceAccount -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+        <maml:name>ServiceAccount</maml:name>
+        <maml:description>
+          <maml:para>SamAccountName of the service account (or gMSA) used to execute the scheduled task.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: AdminUsersDN -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+        <maml:name>AdminUsersDN</maml:name>
+        <maml:description>
+          <maml:para>Distinguished Name of the container where the users are located.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: ExcludeList -->
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="2">
+        <maml:name>ExcludeList</maml:name>
+        <maml:description>
+          <maml:para>Userlist to be excluded from this process.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">List`1</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Collections.Generic.List`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[String] SamAccountName of the group managed service account used to execute the scheduled task.</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] Admin User Account OU Distinguished Name. (ej. OU=Users,OU=Admin,DC=EguibarIT,DC=local).</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.Collections.Generic.List`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>List[STRING] user list array</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <!-- OutputType: Int32 -->
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:examples>
+      <command:example>
+        <maml:title>----------  EXAMPLE 1  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet using named parameters.</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Set-ScheduleSemiPrivilegedKeyPair -ServiceAccount "SA_R2D2" -AdminUsersDN "OU=Users,OU=Admin,DC=EguibarIT,DC=local" -ExcludeList "Administrator", "TheGood"</maml:para>
+        </maml:introduction>
+      </command:example>
+      <command:example>
+        <maml:title>----------  EXAMPLE 2  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet.</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Set-ScheduleSemiPrivilegedKeyPair "SA_R2D2" "OU=Users,OU=Admin,DC=EguibarIT,DC=local"</maml:para>
+        </maml:introduction>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>[Eguibar Information Technology S.L. web site]</maml:linkText>
+        <maml:uri>(http://EguibarIT.eu)</maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <!-- Cmdlet: Set-ScheduleServiceAccounts -->
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>Set-ScheduleServiceAccounts</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>ScheduleServiceAccounts</command:noun>
+      <maml:description>
+        <maml:para>Create a new Scheduled Tasks which executes Set-ServiceAccountHousekeeping</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Create a new Scheduled Tasks, which will trigger 12 times per day. The Action configured is a PowerShell function from the Housekeeping module: Set-ServiceAccountHousekeeping</maml:para>
+    </maml:description>
+    <command:syntax>
+      <!-- Parameter set: __AllParameterSets -->
+      <command:syntaxItem>
+        <maml:name>Set-ScheduleServiceAccounts</maml:name>
+        <!-- Parameter: ServiceAccount -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+          <maml:name>ServiceAccount</maml:name>
+          <maml:description>
+            <maml:para>SamAccountName of the service account (or gMSA) used to execute the scheduled task.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: ServiceAccountDN -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+          <maml:name>ServiceAccountDN</maml:name>
+          <maml:description>
+            <maml:para>Distinguished Name of the container where the Service Accounts are located.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: SAGroupName -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="2">
+          <maml:name>SAGroupName</maml:name>
+          <maml:description>
+            <maml:para>Name of the corresponding tier service account group (For tier0: SG_T0SA; for Tier1: SG_T1SA; for Tier2: SG_T2SA).</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <!-- Parameter: ServiceAccount -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+        <maml:name>ServiceAccount</maml:name>
+        <maml:description>
+          <maml:para>SamAccountName of the service account (or gMSA) used to execute the scheduled task.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: ServiceAccountDN -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+        <maml:name>ServiceAccountDN</maml:name>
+        <maml:description>
+          <maml:para>Distinguished Name of the container where the Service Accounts are located.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: SAGroupName -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="2">
+        <maml:name>SAGroupName</maml:name>
+        <maml:description>
+          <maml:para>Name of the corresponding tier service account group (For tier0: SG_T0SA; for Tier1: SG_T1SA; for Tier2: SG_T2SA).</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] SamAccountName of the group managed service account used to execute the scheduled task.</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] representing the Distinguished Name of the object (ej. OU=Users,OU=Good,OU=Sites,DC=EguibarIT,DC=local).</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] Name of the corresponding tier service account group (For tier0: SG_T0SA; for Tier1: SG_T1SA; for Tier2: SG_T2SA)</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <!-- OutputType: Int32 -->
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:examples>
+      <command:example>
+        <maml:title>----------  EXAMPLE 1  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet using named parameters</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Set-ScheduleServiceAccounts -ServiceAccount "SA_R2D2" -ServiceAccountDN "OU=Service Accounts,OU=Admin,DC=EguibarIT,DC=local" -SAGroupName "SG_T0SA"</maml:para>
+        </maml:introduction>
+      </command:example>
+      <command:example>
+        <maml:title>----------  EXAMPLE 2  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Set-ScheduleServiceAccounts "SA_R2D2" "OU=Service Accounts,OU=Admin,DC=EguibarIT,DC=local" "SG_T0SA"</maml:para>
+        </maml:introduction>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>[Eguibar Information Technology S.L. web site]</maml:linkText>
+        <maml:uri>(http://EguibarIT.eu)</maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <!-- Cmdlet: Set-SemiPrivilegedKeyPairCheck -->
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>Set-SemiPrivilegedKeyPairCheck</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>SemiPrivilegedKeyPairCheck</command:noun>
+      <maml:description>
+        <maml:para>Integrity check of Semi-Privileged accounts.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>A Semi-Privileged account can only exist if a Non-Privileged account (standard user) does exists. This is called Key-Pair. If the key-pair non-privileged account (standard user) gets disabled, the semi-privileged account must be disabled as well. If the key-pair non-privileged account (standard user) does not exist, the Semi-Privileged account must be deleted inmediatelly. This function will read all Semi-Privileged accounts and will search its key-pair (SID of the non privileged account), applying the mentioned actions. For this check to work properly, all semi-privileged accounts should have the non-privileged SID stored on the employeeNumber attribute.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <!-- Parameter set: __AllParameterSets -->
+      <command:syntaxItem>
+        <maml:name>Set-SemiPrivilegedKeyPairCheck</maml:name>
+        <!-- Parameter: AdminUsersDN -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+          <maml:name>AdminUsersDN</maml:name>
+          <maml:description>
+            <maml:para>Distinguished Name of the container where the users are located.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: ExcludeList -->
+        <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+          <maml:name>ExcludeList</maml:name>
+          <maml:description>
+            <maml:para>Userlist to be excluded from this process.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">List`1</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Collections.Generic.List`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <!-- Parameter: AdminUsersDN -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+        <maml:name>AdminUsersDN</maml:name>
+        <maml:description>
+          <maml:para>Distinguished Name of the container where the users are located.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: ExcludeList -->
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+        <maml:name>ExcludeList</maml:name>
+        <maml:description>
+          <maml:para>Userlist to be excluded from this process.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">List`1</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Collections.Generic.List`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] Admin User Account OU Distinguished Name. (ej. OU=Users,OU=Admin,DC=EguibarIT,DC=local).</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.Collections.Generic.List`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>List[STRING] user list array</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <!-- OutputType: String -->
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:examples>
+      <command:example>
+        <maml:title>----------  EXAMPLE 1  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet.</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Set-SemiPrivilegedKeyPairCheck "OU=Users,OU=Admin,DC=EguibarIT,DC=local" "TheGood", "TheUgly"</maml:para>
+        </maml:introduction>
+      </command:example>
+      <command:example>
+        <maml:title>----------  EXAMPLE 2  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet using named parameters.</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Set-SemiPrivilegedKeyPairCheck -AdminUsersDN "OU=Users,OU=Admin,DC=EguibarIT,DC=local" -ExcludeList "TheGood", "TheUgly"</maml:para>
+        </maml:introduction>
+      </command:example>
+      <command:example>
+        <maml:title>----------  EXAMPLE 3  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet using splatting.</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>$params = @{ AdminUsersDN = "OU=Users,OU=Admin,DC=EguibarIT,DC=local" ExcludeList = "TheGood", "TheUgly" Verbose = $True } Set-SemiPrivilegedKeyPairCheck @params</maml:para>
+        </maml:introduction>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>[Eguibar Information Technology S.L. web site]</maml:linkText>
+        <maml:uri>(http://EguibarIT.eu)</maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <!-- Cmdlet: New-SemiPrivilegedUser -->
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>New-SemiPrivilegedUser</command:name>
+      <command:verb>New</command:verb>
+      <command:noun>SemiPrivilegedUser</command:noun>
+      <maml:description>
+        <maml:para>Create or modify a Semi-Privileged account.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Create or modify a Semi-Privileged account.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <!-- Parameter set: __AllParameterSets -->
+      <command:syntaxItem>
+        <maml:name>New-SemiPrivilegedUser</maml:name>
+        <!-- Parameter: SamAccountName -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+          <maml:name>SamAccountName</maml:name>
+          <maml:description>
+            <maml:para>Identity of the user getting the new Admin Account (Semi-Privileged user).</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: EmailTo -->
+        <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+          <maml:name>EmailTo</maml:name>
+          <maml:description>
+            <maml:para>Valid Email of the target user. This address will be used to send information to her/him.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: BodyImage -->
+        <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="10">
+          <maml:name>BodyImage</maml:name>
+          <maml:description>
+            <maml:para>Path to the attached image of body template.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: PwdBodyTemplate -->
+        <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="11">
+          <maml:name>PwdBodyTemplate</maml:name>
+          <maml:description>
+            <maml:para>Path to the Password body template file.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: AccountType -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="2">
+          <maml:name>AccountType</maml:name>
+          <maml:description>
+            <maml:para>Must specify the account type. Valid values are T0 or T1 or T2</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: AdminUsersDN -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="3">
+          <maml:name>AdminUsersDN</maml:name>
+          <maml:description>
+            <maml:para>Distinguished Name of the container where the Admin users are located.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: From -->
+        <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="4">
+          <maml:name>From</maml:name>
+          <maml:description>
+            <maml:para>Valid Email of the sending user. This address will be used to send the information and for authenticate to the SMTP server.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: CredentialUser -->
+        <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="5">
+          <maml:name>CredentialUser</maml:name>
+          <maml:description>
+            <maml:para>User for authenticate to the SMTP server.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: CredentialPassword -->
+        <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="6">
+          <maml:name>CredentialPassword</maml:name>
+          <maml:description>
+            <maml:para>Password for authenticate to the SMTP server.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: SMTPserver -->
+        <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="7">
+          <maml:name>SMTPserver</maml:name>
+          <maml:description>
+            <maml:para>SMTP server.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: SMTPport -->
+        <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="8">
+          <maml:name>SMTPport</maml:name>
+          <maml:description>
+            <maml:para>SMTP port number.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">int</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>25</dev:defaultValue>
+        </command:parameter>
+        <!-- Parameter: BodyTemplate -->
+        <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="9">
+          <maml:name>BodyTemplate</maml:name>
+          <maml:description>
+            <maml:para>Path to the body template file.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <!-- Parameter: SamAccountName -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+        <maml:name>SamAccountName</maml:name>
+        <maml:description>
+          <maml:para>Identity of the user getting the new Admin Account (Semi-Privileged user).</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: EmailTo -->
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+        <maml:name>EmailTo</maml:name>
+        <maml:description>
+          <maml:para>Valid Email of the target user. This address will be used to send information to her/him.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: AccountType -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="2">
+        <maml:name>AccountType</maml:name>
+        <maml:description>
+          <maml:para>Must specify the account type. Valid values are T0 or T1 or T2</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: AdminUsersDN -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="3">
+        <maml:name>AdminUsersDN</maml:name>
+        <maml:description>
+          <maml:para>Distinguished Name of the container where the Admin users are located.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: From -->
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="4">
+        <maml:name>From</maml:name>
+        <maml:description>
+          <maml:para>Valid Email of the sending user. This address will be used to send the information and for authenticate to the SMTP server.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: CredentialUser -->
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="5">
+        <maml:name>CredentialUser</maml:name>
+        <maml:description>
+          <maml:para>User for authenticate to the SMTP server.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: CredentialPassword -->
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="6">
+        <maml:name>CredentialPassword</maml:name>
+        <maml:description>
+          <maml:para>Password for authenticate to the SMTP server.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: SMTPserver -->
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="7">
+        <maml:name>SMTPserver</maml:name>
+        <maml:description>
+          <maml:para>SMTP server.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: SMTPport -->
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="8">
+        <maml:name>SMTPport</maml:name>
+        <maml:description>
+          <maml:para>SMTP port number.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">int</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>25</dev:defaultValue>
+      </command:parameter>
+      <!-- Parameter: BodyTemplate -->
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="9">
+        <maml:name>BodyTemplate</maml:name>
+        <maml:description>
+          <maml:para>Path to the body template file.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: BodyImage -->
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="10">
+        <maml:name>BodyImage</maml:name>
+        <maml:description>
+          <maml:para>Path to the attached image of body template.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: PwdBodyTemplate -->
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="11">
+        <maml:name>PwdBodyTemplate</maml:name>
+        <maml:description>
+          <maml:para>Path to the Password body template file.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] representing the user SamAccountName.</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] representing the valid E-mail address.</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] Indicating which kind of Semi-Privileged account to be created. Valid values are T0 or T1 or T2</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] Admin User Account OU Distinguished Name. (ej. OU=Users,OU=Good,OU=Sites,DC=EguibarIT,DC=local).</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] representing the valid E-mail address of sender.</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] representing the valid user for authenticating to SMTP.</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] representing the valid password for authenticating to SMTP (User is E-mail address of sender).</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] representing the SMTP server.</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[int] representing the SMTP port number.</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] representing the body template file.</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] representing the attached image for the body template.</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] representing the Password body template file.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <!-- OutputType: Int32 -->
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:examples>
+      <command:example>
+        <maml:title>----------  EXAMPLE 1  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>New-SemiPrivilegedUser dvader dvader@eguibarit.com T0 'OU=Admin Accounts,OU=Admin,DC=EguibarIT,DC=local' 'DelegationModel@eguibarit.com' 'smtpout.europe.secureserver.net'</maml:para>
+        </maml:introduction>
+      </command:example>
+      <command:example>
+        <maml:title>----------  EXAMPLE 2  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet using named parameters</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>New-SemiPrivilegedUser -SamAccountName dvader -EmailTo dvader@eguibarit.com -AccountType T0 -AdminUsersDN 'OU=Admin Accounts,OU=Admin,DC=EguibarIT,DC=local' -From 'DelegationModel@eguibarit.com' -SMTPserver 'smtpout.europe.secureserver.net'</maml:para>
+        </maml:introduction>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>[Eguibar Information Technology S.L. web site]</maml:linkText>
+        <maml:uri>(http://EguibarIT.eu)</maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <!-- Cmdlet: Set-SemiPrivilegedUsersPwdReset -->
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>Set-SemiPrivilegedUsersPwdReset</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>SemiPrivilegedUsersPwdReset</command:noun>
+      <maml:description>
+        <maml:para>Reset password of semi-privileged user</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Reset password of semi-privileged user</maml:para>
+    </maml:description>
+    <command:syntax>
+      <!-- Parameter set: __AllParameterSets -->
+      <command:syntaxItem>
+        <maml:name>Set-SemiPrivilegedUsersPwdReset</maml:name>
+        <!-- Parameter: SamAccountName -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+          <maml:name>SamAccountName</maml:name>
+          <maml:description>
+            <maml:para>Identity of the Semi-Privileged user which will have a new password.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: From -->
+        <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+          <maml:name>From</maml:name>
+          <maml:description>
+            <maml:para>Valid Email of the sending user. This address will be used to send the information and for authenticate to the SMTP server.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: CredentialUser -->
+        <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="2">
+          <maml:name>CredentialUser</maml:name>
+          <maml:description>
+            <maml:para>User for authenticate to the SMTP server.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: CredentialPassword -->
+        <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="3">
+          <maml:name>CredentialPassword</maml:name>
+          <maml:description>
+            <maml:para>Password for authenticate to the SMTP server.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: SMTPserver -->
+        <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="4">
+          <maml:name>SMTPserver</maml:name>
+          <maml:description>
+            <maml:para>SMTP server.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: SMTPport -->
+        <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="5">
+          <maml:name>SMTPport</maml:name>
+          <maml:description>
+            <maml:para>SMTP port number.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">int</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>25</dev:defaultValue>
+        </command:parameter>
+        <!-- Parameter: PwdBodyTemplate -->
+        <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="6">
+          <maml:name>PwdBodyTemplate</maml:name>
+          <maml:description>
+            <maml:para>Path to the Password body template file.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: SendByEmail -->
+        <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="7">
+          <maml:name>SendByEmail</maml:name>
+          <maml:description>
+            <maml:para>If present, will send the new password by encrypted email.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <!-- Parameter: SamAccountName -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+        <maml:name>SamAccountName</maml:name>
+        <maml:description>
+          <maml:para>Identity of the Semi-Privileged user which will have a new password.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: From -->
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+        <maml:name>From</maml:name>
+        <maml:description>
+          <maml:para>Valid Email of the sending user. This address will be used to send the information and for authenticate to the SMTP server.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: CredentialUser -->
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="2">
+        <maml:name>CredentialUser</maml:name>
+        <maml:description>
+          <maml:para>User for authenticate to the SMTP server.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: CredentialPassword -->
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="3">
+        <maml:name>CredentialPassword</maml:name>
+        <maml:description>
+          <maml:para>Password for authenticate to the SMTP server.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: SMTPserver -->
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="4">
+        <maml:name>SMTPserver</maml:name>
+        <maml:description>
+          <maml:para>SMTP server.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: SMTPport -->
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="5">
+        <maml:name>SMTPport</maml:name>
+        <maml:description>
+          <maml:para>SMTP port number.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">int</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>25</dev:defaultValue>
+      </command:parameter>
+      <!-- Parameter: PwdBodyTemplate -->
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="6">
+        <maml:name>PwdBodyTemplate</maml:name>
+        <maml:description>
+          <maml:para>Path to the Password body template file.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: SendByEmail -->
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="7">
+        <maml:name>SendByEmail</maml:name>
+        <maml:description>
+          <maml:para>If present, will send the new password by encrypted email.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] representing the user SamAccountName.</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] representing the valid E-mail address of sender.</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] representing the valid user for authenticating to SMTP.</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] representing the valid password for authenticating to SMTP (User is E-mail address of sender).</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] representing the SMTP server.</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[INT] representing the SMTP port number.</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] representing the Password body template file.</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[SWITCH] indicating if password has to be sent by encrypted email.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <!-- OutputType: UserPrincipalEx -->
+      <command:returnValue>
+        <dev:type>
+          <maml:name>EguibarIT.Housekeeping.ExtPrincipal.UserPrincipalEx</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:examples>
+      <command:example>
+        <maml:title>----------  EXAMPLE 1  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Set-SemiPrivilegedUsersPwdReset dvader_t0</maml:para>
+        </maml:introduction>
+      </command:example>
+      <command:example>
+        <maml:title>----------  EXAMPLE 2  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet using named parameters</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Set-SemiPrivilegedUsersPwdReset -SamAccountName dvader_t0</maml:para>
+        </maml:introduction>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>[Eguibar Information Technology S.L. web site]</maml:linkText>
+        <maml:uri>(http://EguibarIT.eu)</maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <!-- Cmdlet: Set-ServiceAccountHousekeeping -->
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>Set-ServiceAccountHousekeeping</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>ServiceAccountHousekeeping</command:noun>
+      <maml:description>
+        <maml:para>Function for ServiceAccount housekeeping</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>For each of the service accounts stored within the SA container, make it part of the corresponding service account group based on its tier. For example, the container of Tier0 service accounts must belong to the group SG_T0SA.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <!-- Parameter set: __AllParameterSets -->
+      <command:syntaxItem>
+        <maml:name>Set-ServiceAccountHousekeeping</maml:name>
+        <!-- Parameter: ServiceAccountDN -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+          <maml:name>ServiceAccountDN</maml:name>
+          <maml:description>
+            <maml:para>Distinguished Name of the container where the Service Accounts are located.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+        <!-- Parameter: SAGroupName -->
+        <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+          <maml:name>SAGroupName</maml:name>
+          <maml:description>
+            <maml:para>Name of the corresponding tier service account group (For tier0: SG_T0SA; for Tier1: SG_T1SA; for Tier2: SG_T2SA).</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">string</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <!-- Parameter: ServiceAccountDN -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="0">
+        <maml:name>ServiceAccountDN</maml:name>
+        <maml:description>
+          <maml:para>Distinguished Name of the container where the Service Accounts are located.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+      <!-- Parameter: SAGroupName -->
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+        <maml:name>SAGroupName</maml:name>
+        <maml:description>
+          <maml:para>Name of the corresponding tier service account group (For tier0: SG_T0SA; for Tier1: SG_T1SA; for Tier2: SG_T2SA).</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">string</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] representing the Distinguished Name of the object (ej. OU=Users,OU=Good,OU=Sites,DC=EguibarIT,DC=local).</maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <maml:description>
+          <maml:para>[STRING] Name of the corresponding tier service account group (For tier0: SG_T0SA; for Tier1: SG_T1SA; for Tier2: SG_T2SA)</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <!-- OutputType: Int32 -->
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:examples>
+      <command:example>
+        <maml:title>----------  EXAMPLE 1  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Set-ServiceAccountHousekeeping "OU=T0,OU=SA,OU=Admin,DC=EguibarIT,DC=local" SG_T0SA</maml:para>
+        </maml:introduction>
+      </command:example>
+      <command:example>
+        <maml:title>----------  EXAMPLE 2  ----------</maml:title>
+        <maml:introduction>
+          <maml:para>This example shows how to use this CMDlet using named parameters</maml:para>
+          <maml:para>-</maml:para>
+          <maml:para>Set-ServiceAccountHousekeeping -ServiceAccountDN "OU=T0,OU=SA,OU=Admin,DC=EguibarIT,DC=local" -SAGroupName SG_T0SA</maml:para>
+        </maml:introduction>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>[Eguibar Information Technology S.L. web site]</maml:linkText>
+        <maml:uri>(http://EguibarIT.eu)</maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+</helpItems>

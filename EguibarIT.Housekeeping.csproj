@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AC0E87F3-D0D4-4C79-8F25-CC5A4E7C3A0E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EguibarIT.Housekeeping</RootNamespace>
+    <AssemblyName>EguibarIT.Housekeeping</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\EguibarIT.Housekeeping.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;CODE_ANALYSIS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\EguibarIT.Housekeeping.xml</DocumentationFile>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <ShouldCreateLogs>True</ShouldCreateLogs>
+    <AdvancedSettingsExpanded>False</AdvancedSettingsExpanded>
+    <UpdateAssemblyVersion>True</UpdateAssemblyVersion>
+    <UpdateAssemblyFileVersion>True</UpdateAssemblyFileVersion>
+    <UpdateAssemblyInfoVersion>True</UpdateAssemblyInfoVersion>
+    <AssemblyVersionSettings>None.None.Increment.None</AssemblyVersionSettings>
+    <UpdatePackageVersion>False</UpdatePackageVersion>
+    <AssemblyInfoVersionType>SettingsVersion</AssemblyInfoVersionType>
+    <InheritWinAppVersionFrom>None</InheritWinAppVersionFrom>
+    <AssemblyFileVersionSettings>None.None.Increment.None</AssemblyFileVersionSettings>
+    <AssemblyInfoVersionSettings>None.None.Increment.None</AssemblyInfoVersionSettings>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>LOGO_SinFondo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.GroupPolicy.Management, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\Microsoft.GroupPolicy.Management\v4.0_2.0.0.0__31bf3856ad364e35\Microsoft.GroupPolicy.Management.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\WindowsPowerShell\3.0\System.Management.Automation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management.Instrumentation" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CMDlets\OverlapSubnets.cs" />
+    <Compile Include="Helpers\AdDomain.cs" />
+    <Compile Include="Helpers\AdHelper.cs" />
+    <Compile Include="Helpers\AdManager.cs" />
+    <Compile Include="Helpers\BaseClass.cs" />
+    <Compile Include="Helpers\Cons.cs" />
+    <Compile Include="Helpers\GroupClass.cs" />
+    <Compile Include="Helpers\HelperClass.cs" />
+    <Compile Include="Helpers\UserClass.cs" />
+    <Compile Include="CMDlets\AdminCount.cs" />
+    <Compile Include="Helpers\EnumExtensionClass.cs" />
+    <Compile Include="CMDlets\OrphanGPO.cs" />
+    <Compile Include="CMDlets\OrphanGPT.cs" />
+    <Compile Include="CMDlets\SemiPrivilegedUser.cs" />
+    <Compile Include="CMDlets\NonPrivilegedGroup.cs" />
+    <Compile Include="CMDlets\PrivilegedComputer.cs" />
+    <Compile Include="CMDlets\PrivilegedGroups.cs" />
+    <Compile Include="CMDlets\PrivilegedUsers.cs" />
+    <Compile Include="CMDlets\RandomPassword.cs" />
+    <Compile Include="CMDlets\SchdlTasks.cs" />
+    <Compile Include="CMDlets\SemiPrivilegedKeyPairCheck.cs" />
+    <Compile Include="CMDlets\SemiPrivilegedUserPwdReset.cs" />
+    <Compile Include="CMDlets\SemiPrivilegedUserReport.cs" />
+    <Compile Include="CMDlets\ServiceAccounts.cs" />
+    <Compile Include="CMDlets\Stale.cs" />
+    <Compile Include="CMDlets\UnLinkedGPO.cs" />
+    <Compile Include="Helpers\Email.cs" />
+    <Compile Include="Helpers\GetFromAd.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Helpers\Helpers.cs" />
+    <Compile Include="IP\Bits.cs" />
+    <Compile Include="IP\IPAddressRange.cs" />
+    <Compile Include="Helpers\Logging.cs" />
+    <Compile Include="Helpers\PrincipalExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Helpers\TaskScheduler.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Resources\Picture1.jpg" />
+    <EmbeddedResource Include="Logo.jpg" />
+    <Content Include="LOGO_SinFondo.ico" />
+    <Content Include="Resources\LOGO_SinFondo.ico" />
+    <None Include="Resources\Logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="EguibarIT.Housekeeping.psd1" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Resource1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="TaskScheduler">
+      <Version>2.8.11</Version>
+    </PackageReference>
+    <PackageReference Include="XmlDoc2CmdletDoc">
+      <Version>0.2.12</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="GPMGMTLib">
+      <Guid>{C2F48CC2-305B-4672-BAA7-76A57738F48A}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if $(ConfigurationName) == Release (
+
+"C:\Program Files (x86)\Windows Kits\10\bin\10.0.16299.0\x64\signtool.exe" sign /f "$(SolutionDir)CodeSign-2020.pfx" /p "Pizotza 1234" /tr http://tsa.starfieldtech.com /td SHA256 /fd SHA256 "$(TargetPath)"
+
+copy "$(TargetPath)" "$(SolutionDir)Final\EguibarIT.Housekeeping"
+
+copy "$(TargetDir)EguibarIT.Housekeeping.dll-Help.xml" "$(SolutionDir)Final\EguibarIT.Housekeeping"
+
+copy "$(TargetDir)Microsoft.Win32.TaskScheduler.dll" "$(SolutionDir)Final\EguibarIT.Housekeeping"
+
+copy "$(TargetDir)Microsoft.Win32.TaskScheduler.xml" "$(SolutionDir)Final\EguibarIT.Housekeeping"
+
+powershell.exe -NoProfile -ExecutionPolicy ByPass -Command  "&amp; { $DllVersion = (Get-Item -Path '$(TargetPath)').VersionInfo.FileVersion; $RootModule = '.\{0}' -f "'$(TargetFileName)'"; Update-ModuleManifest -Path  '$(ProjectDir)EguibarIT.Housekeeping.psd1' -ModuleVersion $DllVersion -RootModule $RootModule  -CmdletsToExport '*';  exit $LASTEXITCODE }"
+
+copy "$(ProjectDir)EguibarIT.Housekeeping.psd1" "$(SolutionDir)Final\EguibarIT.Housekeeping"
+
+)</PostBuildEvent>
+    <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

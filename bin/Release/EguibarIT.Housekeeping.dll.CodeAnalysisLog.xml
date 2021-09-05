@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="d:\program files (x86)\microsoft visual studio\2019\professional\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="16.0">
+ <Targets>
+  <Target Name="E:\OneDrive - Eguibar Information Technology S.L\_Scripts\ApSrv\EguibarIT\EguibarIT.Housekeeping\bin\Release\EguibarIT.Housekeeping.dll">
+   <Modules>
+    <Module Name="eguibarit.housekeeping.dll">
+     <Namespaces>
+      <Namespace Name="EguibarIT.Housekeeping">
+       <Types>
+        <Type Name="FileLogger" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Log(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2020-02-27 17:22:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="E:\OneDrive - Eguibar Information Technology S.L\_Scripts\ApSrv\EguibarIT\EguibarIT.Housekeeping\Helpers" File="Logging.cs" Line="84">Object 'streamWriter' can be disposed more than once in method 'FileLogger.Log(string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 84</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="EguibarIT.Housekeeping.IP">
+       <Types>
+        <Type Name="IPAddressRange" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#System.Collections.Generic.IReadOnlyCollection`1&lt;System.Collections.Generic.KeyValuePair`2&lt;System.String,System.String&gt;&gt;.Count" Kind="Property" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#System.Collections.Generic.IReadOnlyCollection`1&lt;System.Collections.Generic.KeyValuePair`2&lt;System.String,System.String&gt;&gt;.get_Count()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-02-27 17:22:35Z" FixCategory="NonBreaking">
+               <Issue Certainty="95" Level="Error" Path="E:\OneDrive - Eguibar Information Technology S.L\_Scripts\ApSrv\EguibarIT\EguibarIT.Housekeeping\IP" File="IPAddressRange.cs" Line="532">Make 'IPAddressRange' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'IReadOnlyCollection&lt;KeyValuePair&lt;string, string&gt;&gt;.Count.get()' and is visible to derived classes.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#System.Collections.Generic.IReadOnlyDictionary`2&lt;System.String,System.String&gt;.ContainsKey(System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-02-27 17:22:35Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="E:\OneDrive - Eguibar Information Technology S.L\_Scripts\ApSrv\EguibarIT\EguibarIT.Housekeeping\IP" File="IPAddressRange.cs" Line="536">Make 'IPAddressRange' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'IReadOnlyDictionary&lt;string, string&gt;.ContainsKey(string)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#System.Collections.Generic.IReadOnlyDictionary`2&lt;System.String,System.String&gt;.Item[System.String]" Kind="Property" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#System.Collections.Generic.IReadOnlyDictionary`2&lt;System.String,System.String&gt;.get_Item(System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-02-27 17:22:35Z" FixCategory="NonBreaking">
+               <Issue Certainty="95" Level="Error" Path="E:\OneDrive - Eguibar Information Technology S.L\_Scripts\ApSrv\EguibarIT\EguibarIT.Housekeeping\IP" File="IPAddressRange.cs" Line="534">Make 'IPAddressRange' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'IReadOnlyDictionary&lt;string, string&gt;.this.get(string)' and is visible to derived classes.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#System.Collections.Generic.IReadOnlyDictionary`2&lt;System.String,System.String&gt;.Keys" Kind="Property" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#System.Collections.Generic.IReadOnlyDictionary`2&lt;System.String,System.String&gt;.get_Keys()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-02-27 17:22:35Z" FixCategory="NonBreaking">
+               <Issue Certainty="95" Level="Error" Path="E:\OneDrive - Eguibar Information Technology S.L\_Scripts\ApSrv\EguibarIT\EguibarIT.Housekeeping\IP" File="IPAddressRange.cs" Line="528">Make 'IPAddressRange' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'IReadOnlyDictionary&lt;string, string&gt;.Keys.get()' and is visible to derived classes.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#System.Collections.Generic.IReadOnlyDictionary`2&lt;System.String,System.String&gt;.TryGetValue(System.String,System.String&amp;)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-02-27 17:22:35Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="E:\OneDrive - Eguibar Information Technology S.L\_Scripts\ApSrv\EguibarIT\EguibarIT.Housekeeping\IP" File="IPAddressRange.cs" Line="538">Make 'IPAddressRange' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'IReadOnlyDictionary&lt;string, string&gt;.TryGetValue(string, out string)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#System.Collections.Generic.IReadOnlyDictionary`2&lt;System.String,System.String&gt;.Values" Kind="Property" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#System.Collections.Generic.IReadOnlyDictionary`2&lt;System.String,System.String&gt;.get_Values()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-02-27 17:22:35Z" FixCategory="NonBreaking">
+               <Issue Certainty="95" Level="Error" Path="E:\OneDrive - Eguibar Information Technology S.L\_Scripts\ApSrv\EguibarIT\EguibarIT.Housekeeping\IP" File="IPAddressRange.cs" Line="530">Make 'IPAddressRange' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'IReadOnlyDictionary&lt;string, string&gt;.Values.get()' and is visible to derived classes.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202">
+   <Name>Do not dispose objects multiple times</Name>
+   <Description>A correctly implemented Dispose method can be called multiple times without throwing an exception. However, this is not guaranteed and to avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.</Description>
+   <Resolution Name="Default">Object {0} can be disposed more than once in method {1}. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 205</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182334.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="16.0.0.0" />
+  </Rule>
+  <Rule TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033">
+   <Name>Interface methods should be callable by child types</Name>
+   <Description>Explicit method implementations are defined with private accessibility. Classes that derive from classes with explicit method implementations and choose to re-declare them on the class will not be able to call into the base class implementation unless the base class has provided an alternate method with appropriate accessibility. When overriding a base class method that has been hidden by explicit interface implementation, in order to call into the base class implementation, a derived class must cast the base pointer to the relevant interface. When calling through this reference, however, the derived class implementation will actually be invoked, resulting in recursion and an eventual stack overflow.</Description>
+   <Resolution Name="Default">Make {0} sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of {1} and is visible to derived classes.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182153.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="designrules.dll" Version="16.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Category</String>
+  <String Key="Certainty">Certainty</String>
+  <String Key="CollapseAll">Collapse All</String>
+  <String Key="CheckId">Check Id</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">error(s)</String>
+  <String Key="ExpandAll">Expand All</String>
+  <String Key="Help">Help</String>
+  <String Key="Line">Line</String>
+  <String Key="Messages">message(s)</String>
+  <String Key="LocationNotStoredInPdb">[Location not stored in Pdb]</String>
+  <String Key="Project">Project</String>
+  <String Key="Resolution">Resolution</String>
+  <String Key="Rule">Rule</String>
+  <String Key="RuleFile">Rule File</String>
+  <String Key="RuleDescription">Rule Description</String>
+  <String Key="Source">Source</String>
+  <String Key="Status">Status</String>
+  <String Key="Target">Target</String>
+  <String Key="Warning">Warning</String>
+  <String Key="Warnings">warning(s)</String>
+  <String Key="ReportTitle">Code Analysis Report</String>
+ </Localized>
+</FxCopReport>

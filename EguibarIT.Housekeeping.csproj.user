@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <StartAction>Program</StartAction>
+    <StartProgram>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</StartProgram>
+    <StartArguments>-noexit -command "&amp;{ import-module .\EguibarIT.Housekeeping.dll -verbose } -Verb RunAs"</StartArguments>
+    <StartWorkingDirectory>E:\OneDrive - Eguibar Information Technology S.L\_Scripts\ApSrv\EguibarIT\EguibarIT.Housekeeping\bin\Debug\</StartWorkingDirectory>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ProjectView>ShowAllFiles</ProjectView>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <StartAction>Program</StartAction>
+    <StartProgram>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</StartProgram>
+    <StartArguments>-noexit -command "&amp;{ import-module .\EguibarIT.Housekeeping.dll -verbose } -Verb RunAs"</StartArguments>
+    <StartWorkingDirectory>G:\OneDrive - Eguibar Information Technology SL\OneDrive - Eguibar Information Technology S.L\_Scripts\ApSrv\EguibarIT\EguibarIT.Housekeeping\bin\Release\</StartWorkingDirectory>
+  </PropertyGroup>
+</Project>
